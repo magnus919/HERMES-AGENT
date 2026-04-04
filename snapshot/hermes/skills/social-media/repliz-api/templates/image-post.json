@@ -1,0 +1,15 @@
+{
+  "title": "",
+  "description": "Hello there, this is from Repliz",
+  "type": "image",
+  "medias": [
+    {
+      "type": "image",
+      "thumbnail": "https://storage.repliz.com/thumbnail.png",
+      "url": "https://storage.repliz.com/image.png",
+      "alt": "Picture description"
+    }
+  ],
+  "scheduleAt": "2026-04-01T14:17:50.968Z",
+  "accountId": "REPLACE_WITH_ACCOUNT_ID"
+}

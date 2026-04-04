@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+exec python3 "$HOME/.hermes/skills/social-media/repliz-api/scripts/repliz_api.py" "$@"

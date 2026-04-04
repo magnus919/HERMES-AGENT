@@ -1,0 +1,17 @@
+{
+  "updated_at": "2026-04-04T20:47:34.772606",
+  "platforms": {
+    "telegram": [
+      {
+        "id": "1556527473",
+        "name": "Maia",
+        "type": "dm",
+        "thread_id": null
+      }
+    ],
+    "whatsapp": [],
+    "signal": [],
+    "email": [],
+    "sms": []
+  }
+}

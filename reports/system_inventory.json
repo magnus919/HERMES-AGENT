@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-04-04T12:49:33.180944+00:00",
+  "hostname": "VM-5-136-ubuntu",
+  "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.39",
+  "python_version": "3.11.15 (main, Mar 24 2026, 22:50:29) [Clang 22.1.1 ]",
+  "cwd": "/home/ubuntu/HERMES-AGENT",
+  "repo_root": "/home/ubuntu/HERMES-AGENT",
+  "commands": {
+    "hermes_version": {
+      "command": [
+        "hermes",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Hermes Agent v0.7.0 (2026.4.3)\nProject: /home/ubuntu/.hermes/hermes-agent\nPython: 3.11.15\nOpenAI SDK: 2.30.0\nUp to date",
+      "stderr": ""
+    },
+    "hermes_memory_status": {
+      "command": [
+        "hermes",
+        "memory",
+        "status"
+      ],
+      "exit_code": 0,
+      "stdout": "Memory status\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  Built-in:  always active\n  Provider:  (none \u2014 built-in only)\n\n  Installed plugins:\n    \u2022 byterover  (requires API key)\n    \u2022 hindsight  (requires API key)\n    \u2022 holographic  (local)\n    \u2022 honcho  (requires API key)\n    \u2022 mem0  (requires API key)\n    \u2022 openviking  (requires API key)\n    \u2022 retaindb  (requires API key)",
+      "stderr": ""
+    },
+    "hermes_profile_list": {
+      "command": [
+        "hermes",
+        "profile",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "Profile          Model                        Gateway      Alias\n \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n \u25c6default         gpt-5.4                      running      \u2014",
+      "stderr": ""
+    },
+    "git_version": {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "git version 2.43.0",
+      "stderr": ""
+    },
+    "repo_git_status": {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": "?? .gitignore\n?? README.md\n?? scripts/\n?? snapshot/",
+      "stderr": ""
+    },
+    "repo_git_remote": {
+      "command": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "origin\thttps://github.com/azmiariffaris/HERMES-AGENT.git (fetch)\norigin\thttps://github.com/azmiariffaris/HERMES-AGENT.git (push)",
+      "stderr": ""
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[accounts.gmail]
+email = "azmiariffaris@gmail.com"
+display-name = "azmiariffaris"
+default = true
+
+backend.type = "imap"
+backend.host = "imap.gmail.com"
+backend.port = 993
+backend.encryption.type = "tls"
+backend.login = "azmiariffaris@gmail.com"
+backend.auth.type = "password"
+backend.auth.cmd = "/home/ubuntu/.config/himalaya/gmail-app-password.sh"
+
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.gmail.com"
+message.send.backend.port = 587
+message.send.backend.encryption.type = "start-tls"
+message.send.backend.login = "azmiariffaris@gmail.com"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.cmd = "/home/ubuntu/.config/himalaya/gmail-app-password.sh"
+
+[accounts.gmail.folder.alias]
+inbox = "INBOX"
+sent = "[Gmail]/Surat Terkirim"
+drafts = "[Gmail]/Draf"
+trash = "[Gmail]/Tong Sampah"

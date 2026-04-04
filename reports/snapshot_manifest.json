@@ -1,0 +1,128 @@
+[
+  {
+    "src": "/home/ubuntu/.hermes/config.yaml",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/config.yaml",
+    "kind": "file",
+    "required": true,
+    "exists": true,
+    "size_bytes": 7260
+  },
+  {
+    "src": "/home/ubuntu/.hermes/.env",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/.env",
+    "kind": "file",
+    "required": true,
+    "exists": true,
+    "size_bytes": 612
+  },
+  {
+    "src": "/home/ubuntu/.hermes/auth.json",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/auth.json",
+    "kind": "file",
+    "required": true,
+    "exists": true,
+    "size_bytes": 4801
+  },
+  {
+    "src": "/home/ubuntu/.hermes/memories",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/memories",
+    "kind": "dir",
+    "required": true,
+    "exists": true,
+    "size_bytes": 794
+  },
+  {
+    "src": "/home/ubuntu/.hermes/skills",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/skills",
+    "kind": "dir",
+    "required": true,
+    "exists": true,
+    "size_bytes": 6690305
+  },
+  {
+    "src": "/home/ubuntu/.hermes/pairing",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/pairing",
+    "kind": "dir",
+    "required": false,
+    "exists": true,
+    "size_bytes": 137
+  },
+  {
+    "src": "/home/ubuntu/.hermes/gateway_state.json",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/gateway_state.json",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 447
+  },
+  {
+    "src": "/home/ubuntu/.hermes/channel_directory.json",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/channel_directory.json",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 280
+  },
+  {
+    "src": "/home/ubuntu/.hermes/profiles",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/profiles",
+    "kind": "dir",
+    "required": false,
+    "exists": false
+  },
+  {
+    "src": "/home/ubuntu/.hermes/cron",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/cron",
+    "kind": "dir",
+    "required": false,
+    "exists": true,
+    "size_bytes": 0
+  },
+  {
+    "src": "/home/ubuntu/.hermes/plugins",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/hermes/plugins",
+    "kind": "dir",
+    "required": false,
+    "exists": false
+  },
+  {
+    "src": "/home/ubuntu/.config/himalaya/config.toml",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/config/himalaya/config.toml",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 831
+  },
+  {
+    "src": "/home/ubuntu/.config/himalaya/gmail-app-password.sh",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/config/himalaya/gmail-app-password.sh",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 51
+  },
+  {
+    "src": "/home/ubuntu/.gitconfig",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/home/.gitconfig",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 91
+  },
+  {
+    "src": "/home/ubuntu/.git-credentials",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/home/.git-credentials",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 74
+  },
+  {
+    "src": "/home/ubuntu/.local/bin/repliz-api",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/home/.local/bin/repliz-api",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 105
+  }
+]
