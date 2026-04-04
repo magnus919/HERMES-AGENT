@@ -21,6 +21,7 @@ The sync process snapshots selected high-value state into `snapshot/`, including
 - `~/.hermes/pairing/`
 - optional Hermes state files such as gateway/channel/profile/cron/plugin directories when present
 - `~/.config/himalaya/` Gmail CLI config used in this environment
+- `/etc/apache2/sites-available/assetloan.my.id.conf` deployment vhost configuration
 - `~/.gitconfig`
 - `~/.git-credentials`
 - `~/.local/bin/repliz-api`

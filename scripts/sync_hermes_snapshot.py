@@ -44,6 +44,7 @@ def targets() -> list[Target]:
         Target(HOME / ".hermes" / "plugins", "hermes/plugins", "dir", False),
         Target(HOME / ".config" / "himalaya" / "config.toml", "config/himalaya/config.toml", "file", False),
         Target(HOME / ".config" / "himalaya" / "gmail-app-password.sh", "config/himalaya/gmail-app-password.sh", "file", False),
+        Target(Path("/etc/apache2/sites-available/assetloan.my.id.conf"), "system/apache2/sites-available/assetloan.my.id.conf", "file", False),
         Target(HOME / ".gitconfig", "home/.gitconfig", "file", False),
         Target(HOME / ".git-credentials", "home/.git-credentials", "file", False),
         Target(HOME / ".local" / "bin" / "repliz-api", "home/.local/bin/repliz-api", "file", False),

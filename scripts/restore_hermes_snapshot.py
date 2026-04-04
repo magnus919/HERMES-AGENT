@@ -33,6 +33,7 @@ def targets() -> list[Target]:
         Target("hermes/plugins", HOME / ".hermes" / "plugins", "dir"),
         Target("config/himalaya/config.toml", HOME / ".config" / "himalaya" / "config.toml", "file"),
         Target("config/himalaya/gmail-app-password.sh", HOME / ".config" / "himalaya" / "gmail-app-password.sh", "file"),
+        Target("system/apache2/sites-available/assetloan.my.id.conf", Path("/etc/apache2/sites-available/assetloan.my.id.conf"), "file"),
         Target("home/.gitconfig", HOME / ".gitconfig", "file"),
         Target("home/.git-credentials", HOME / ".git-credentials", "file"),
         Target("home/.local/bin/repliz-api", HOME / ".local" / "bin" / "repliz-api", "file"),

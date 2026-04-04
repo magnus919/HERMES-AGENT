@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-04-04T13:22:51.828810+00:00",
+  "timestamp_utc": "2026-04-04T13:46:47.444439+00:00",
   "hostname": "VM-5-136-ubuntu",
   "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.39",
   "python_version": "3.11.15 (main, Mar 24 2026, 22:50:29) [Clang 22.1.1 ]",
@@ -51,7 +51,7 @@
         "--short"
       ],
       "exit_code": 0,
-      "stdout": "M snapshot/hermes/channel_directory.json\n M snapshot/hermes/cron/jobs.json",
+      "stdout": "M README.md\n M scripts/restore_hermes_snapshot.py\n M scripts/sync_hermes_snapshot.py\n M snapshot/hermes/channel_directory.json\n M snapshot/hermes/config.yaml\n M snapshot/hermes/cron/jobs.json\n?? snapshot/hermes/cron/output/\n?? snapshot/hermes/skills/devops/deploy-php-mariadb-apache-app/\n?? snapshot/system/",
       "stderr": ""
     },
     "repo_git_remote": {

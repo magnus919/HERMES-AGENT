@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 7260
+    "size_bytes": 8759
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 6693532
+    "size_bytes": 6697814
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 1425
+    "size_bytes": 2467
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -100,6 +100,14 @@
     "required": false,
     "exists": true,
     "size_bytes": 51
+  },
+  {
+    "src": "/etc/apache2/sites-available/assetloan.my.id.conf",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/system/apache2/sites-available/assetloan.my.id.conf",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 609
   },
   {
     "src": "/home/ubuntu/.gitconfig",
