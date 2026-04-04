@@ -13,7 +13,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 612
+    "size_bytes": 655
   },
   {
     "src": "/home/ubuntu/.hermes/auth.json",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 6701046
+    "size_bytes": 6701409
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 3487
+    "size_bytes": 4509
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",

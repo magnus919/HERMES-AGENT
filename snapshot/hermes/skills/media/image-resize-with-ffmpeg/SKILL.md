@@ -12,6 +12,12 @@ When to use
 - Want letterbox/blur-fill/crop behavior using only terminal tools
 
 Steps
+0. Check available tools and fall back cleanly.
+   - If Pillow/PIL is unavailable, do not spend time trying to install it for a simple resize.
+   - Check what is present with something like:
+     which identify || which magick || which ffprobe || which ffmpeg || which convert || which python3
+   - If ffprobe/ffmpeg are available, proceed entirely with ffmpeg.
+
 1. Inspect the source image.
    - Verify file exists.
    - Get dimensions with:
