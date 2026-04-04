@@ -60,6 +60,8 @@ You need these five values from the X Developer Portal:
 - `X_ACCESS_TOKEN`
 - `X_ACCESS_TOKEN_SECRET`
 
+Important: X may also show an OAuth 2.0 `Client ID` and `Client Secret`. Those are real credentials, but `x-cli` does not currently use them for its normal command flow. They can be stored for future custom integrations, but they do not replace `X_ACCESS_TOKEN` and `X_ACCESS_TOKEN_SECRET` for this skill.
+
 Get them from:
 - https://developer.x.com/en/portal/dashboard
 

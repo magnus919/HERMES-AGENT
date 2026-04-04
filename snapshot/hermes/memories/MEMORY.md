@@ -5,3 +5,5 @@ On this machine, the Hermes venv at /home/ubuntu/.hermes/hermes-agent/venv may b
 Custom skill 'repliz-api' is installed for the default environment and provides account, schedule, and queue operations through a local `repliz-api` wrapper command backed by stored Repliz credentials.
 §
 x-cli is installed for X/Twitter access. Current X integration has app key, app secret, and bearer token configured, but still lacks the user access token and access token secret. A direct X API test returned HTTP 402 Payment Required, indicating the developer plan or app access is not fully enabled yet.
+§
+Di environment Hermes ini, transport WhatsApp yang sedang terhubung untuk chat tidak boleh diasumsikan sebagai WhatsApp Business Platform/Calling API resmi; untuk voice call WhatsApp perlu verifikasi terpisah di Meta Business/WABA dan kemungkinan akses Calling API/beta.

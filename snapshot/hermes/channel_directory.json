@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-04T23:29:35.747368",
+  "updated_at": "2026-04-04T23:44:35.764824",
   "platforms": {
     "telegram": [
       {
@@ -14,6 +14,12 @@
         "id": "155898873929940@lid",
         "name": "Muhammad Faris Azmiarif",
         "type": "dm",
+        "thread_id": null
+      },
+      {
+        "id": "120363295261781239@g.us",
+        "name": "120363295261781239",
+        "type": "group",
         "thread_id": null
       }
     ],

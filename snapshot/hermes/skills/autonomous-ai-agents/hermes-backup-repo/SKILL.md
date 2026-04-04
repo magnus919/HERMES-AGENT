@@ -30,7 +30,7 @@ Include:
 - `~/.hermes/skills/`
 - `~/.hermes/pairing/`
 - optional Hermes state directories/files if present: `profiles/`, `cron/`, `plugins/`, `gateway_state.json`, `channel_directory.json`
-- important external integrations stored outside `~/.hermes/` (for example `~/.config/himalaya/`, `~/.gitconfig`, `~/.git-credentials`, wrapper scripts in `~/.local/bin/`)
+- important external integrations stored outside `~/.hermes/` (for example `~/.config/himalaya/`, `~/.config/x-cli/.env`, `~/.gitconfig`, `~/.git-credentials`, wrapper scripts in `~/.local/bin/`)
 
 Exclude:
 - session transcripts unless the user explicitly wants them
@@ -94,4 +94,6 @@ Have the cron return only a short status and never print secrets.
 - Make the repo private by default because it contains secrets.
 - If reports are always regenerated with timestamps, the auto-commit script must avoid committing report-only churn.
 - Some integrations live outside `~/.hermes/`; explicitly include them if they matter for migration.
+- X/Twitter via `x-cli` stores credentials in `~/.config/x-cli/.env`; back that file up explicitly if X integration is configured.
+- If the restored machine has `uv` but not `x-cli`, have the restore script attempt `uv tool install git+https://github.com/Infatoshi/x-cli.git` automatically when an `x-cli` env file was restored.
 - Hermes cron state may appear later under `~/.hermes/cron/`; include it when present so backup automation configuration is also migrated.
