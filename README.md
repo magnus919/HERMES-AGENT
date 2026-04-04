@@ -21,6 +21,7 @@ The sync process snapshots selected high-value state into `snapshot/`, including
 - `~/.hermes/pairing/`
 - optional Hermes state files such as gateway/channel/profile/cron/plugin directories when present
 - `~/.config/himalaya/` Gmail CLI config used in this environment
+- `~/.config/x-cli/.env` X/Twitter CLI credentials when configured
 - `/etc/apache2/sites-available/assetloan.my.id.conf` deployment vhost configuration
 - `~/.gitconfig`
 - `~/.git-credentials`
@@ -75,6 +76,7 @@ python3 scripts/restore_hermes_snapshot.py
 ```
 
 4. Restart Hermes / gateway after restore.
+   - If X/Twitter credentials were backed up, the restore script also restores the x-cli env file and attempts to install `x-cli` automatically when `uv` is available.
 5. Recreate the automatic backup cron job:
 
 ```bash

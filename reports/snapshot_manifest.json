@@ -13,7 +13,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 655
+    "size_bytes": 1001
   },
   {
     "src": "/home/ubuntu/.hermes/auth.json",
@@ -29,7 +29,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 975
+    "size_bytes": 1284
   },
   {
     "src": "/home/ubuntu/.hermes/skills",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 5529
+    "size_bytes": 6551
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -100,6 +100,14 @@
     "required": false,
     "exists": true,
     "size_bytes": 51
+  },
+  {
+    "src": "/home/ubuntu/.config/x-cli/.env",
+    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/config/x-cli/.env",
+    "kind": "file",
+    "required": false,
+    "exists": true,
+    "size_bytes": 1001
   },
   {
     "src": "/etc/apache2/sites-available/assetloan.my.id.conf",
