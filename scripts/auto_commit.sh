@@ -6,11 +6,14 @@ cd "$REPO_ROOT"
 
 python3 scripts/sync_hermes_snapshot.py > /tmp/hermes-sync-result.json
 
-git add -A
+git add .gitignore README.md scripts snapshot
 if git diff --cached --quiet; then
+  git checkout -- reports 2>/dev/null || true
   echo "No backup changes detected."
   exit 0
 fi
+
+git add reports
 
 ts="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git commit -m "chore: sync Hermes snapshot ${ts}"
