@@ -29,7 +29,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 794
+    "size_bytes": 930
   },
   {
     "src": "/home/ubuntu/.hermes/skills",
