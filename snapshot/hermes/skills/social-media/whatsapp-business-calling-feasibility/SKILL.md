@@ -27,17 +27,32 @@ Quickly determine:
 4. Extract the practical constraints that matter to the user:
    - This requires WhatsApp Business infrastructure, not a personal WhatsApp account.
    - The current text-chat assistant cannot simply start taking WhatsApp calls by itself.
-   - A dedicated business number / WABA setup is typically needed.
+   - Do not assume an already-connected WhatsApp chat bridge is official Cloud API / WABA Calling.
+   - A dedicated business number / WABA setup is typically needed, and a new number is usually the safest recommendation.
    - Real-time media handling/backend infrastructure is required.
    - SIP or call-related Graph API/webhook flows may be involved depending on architecture.
-5. Translate the docs into user-facing truth in plain language:
+   - If SIP is used, note that calling-related Graph API endpoints/webhooks are replaced by SIP signaling flow.
+5. Identify owner-only blockers explicitly:
+   - Meta Business / Meta Developer login
+   - admin access to app, WABA, and phone-number assets
+   - phone OTP / two-step PIN
+   - business verification
+   - billing / terms acceptance
+   - app review / calling access approval where applicable
+6. Translate the docs into user-facing truth in plain language:
    - "Yes, technically possible via WhatsApp Business Calling API."
    - "No, this current chat does not automatically become callable."
    - "You need a separate business calling system/backend."
-6. Recommend the simplest practical rollout path:
+   - "I can build most of the technical stack, but account-ownership steps still require you."
+7. Recommend the simplest practical rollout path:
    - Start with inbound calls to an AI business number.
+   - Prefer official Calling API + SIP + FreeSWITCH + AI gateway for realistic implementation.
    - Then add production hardening / outbound if needed.
-7. End with one concrete fork-in-the-road question for the user, usually:
+8. If the user asks for a free option, clearly distinguish:
+   - free/cheap web voice app: possible
+   - WhatsApp voice notes: possible
+   - true WhatsApp live calling: usually not realistically free
+9. End with one concrete fork-in-the-road question for the user, usually:
    - Use a new business number, or reuse an existing business number?
 
 # Good answer shape
