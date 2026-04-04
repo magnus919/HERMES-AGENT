@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 9
+        "completed": 10
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-05T01:45:16.798875+07:00",
-      "last_run_at": "2026-04-05T01:26:04.052069+08:00",
+      "next_run_at": "2026-04-05T02:19:30.313204+07:00",
+      "last_run_at": "2026-04-05T01:15:45.429964+07:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -38,8 +38,8 @@
     },
     {
       "id": "bbe983d1ef56",
-      "name": "nightly-ai-social-learning",
-      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only, sourced Indonesian research sweep for Maia about AI Agent, Hermes Agent, and broader AI developments. Work efficiently and finish within the runtime budget. Prioritize directly accessible public sources in this order: 1) official product/company blogs and release notes, 2) GitHub releases/repos for Hermes or related tooling, 3) reputable public AI news or research sources, 4) directly accessible public Threads/Instagram profile or post pages only when they load cleanly without login or challenge pages. Important constraints: do not use search-engine challenge pages, do not spend more than about 2 minutes on any one blocked source, and if a page shows CAPTCHA, login wall, bot challenge, or unusable JS gate, immediately note the limitation and move on. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise report with 4-8 key findings, why each matters, practical implications for Hermes, and a sources section with direct URLs or precise source names for every major claim. Be explicitly honest about uncertainty, access limitations, and anything not verified. Do not fabricate, bluff, or present guesses as facts.",
+      "name": "nightly-ai-social-scan",
+      "prompt": "Every day at 23:05 WIB (Asia/Jakarta), perform a fast, read-only Indonesian social-media scan focused on public Threads and Instagram content.\n\nPriority order must follow Maia's instruction exactly:\n1) AI agents / autonomous agents / agent workflows / tool-using assistants\n2) Hermes / Hermes Agent / workflows or tools that Hermes can learn from directly\n3) Broader AI news only if it is clearly relevant to AI agents or Hermes\n\nGoal:\n- Turn what is found into practical learning for Hermes.\n- Prefer high-signal, recent, public posts/accounts/pages.\n- Do not include generic AI news unless it helps priorities 1 or 2.\n\nHard constraints:\n- Finish within 4 minutes.\n- Use at most 3 source items total.\n- Public web only; do not log in manually, do not post, like, comment, follow, DM, or modify any account.\n- If Threads/Instagram public access is limited, say that clearly and record only what can actually be verified.\n- Do not fabricate post details, timestamps, or access.\n\nRequired output in Indonesian:\n1) Temuan utama, ordered by the priority above\n2) Apa pelajaran yang bisa diserap Hermes\n3) Sumber\n4) Keterbatasan akses / apa yang belum bisa diverifikasi",
       "skills": [],
       "skill": null,
       "model": null,
@@ -47,24 +47,24 @@
       "base_url": null,
       "schedule": {
         "kind": "cron",
-        "expr": "30 23 * * *",
-        "display": "30 23 * * *"
+        "expr": "5 23 * * *",
+        "display": "5 23 * * *"
       },
-      "schedule_display": "30 23 * * *",
+      "schedule_display": "5 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 3
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
-      "next_run_at": "2026-04-05T23:30:00+07:00",
-      "last_run_at": "2026-04-05T00:58:03.592157+07:00",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'nightly-ai-social-learning' timed out after 10 minutes",
-      "deliver": "origin",
+      "next_run_at": "2026-04-05T23:05:00+07:00",
+      "last_run_at": "2026-04-05T01:45:57.833463+07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "deliver": "local",
       "origin": {
         "platform": "telegram",
         "chat_id": "1556527473",
@@ -73,29 +73,65 @@
       }
     },
     {
-      "id": "049db65df94c",
-      "name": "morning-ai-digest-0800-wib",
-      "prompt": "At 08:00 WIB, deliver a sourced Indonesian morning digest for Maia about the latest developments in AI Agent, Hermes Agent, and broader AI. Work efficiently and finish within the runtime budget. Prioritize directly accessible public sources in this order: 1) official product/company blogs and release notes, 2) GitHub releases/repos for Hermes or related tooling, 3) reputable public AI news or research sources, 4) directly accessible public Threads/Instagram profile or post pages only when they load cleanly without login or challenge pages. Important constraints: do not use search-engine challenge pages, do not spend more than about 2 minutes on any one blocked source, and if a page shows CAPTCHA, login wall, bot challenge, or unusable JS gate, immediately note the limitation and move on. Do not post, like, comment, reply, edit profiles, or mutate any connected accounts. The report must include key findings, why they matter, practical implications or learnings Hermes could apply, and a clear sources section with direct URLs or precise source names for every major claim. Be fully honest about uncertainty, access limitations, and anything unverified. Do not fabricate, bluff, or present guesses as facts.",
+      "id": "5e591a7be711",
+      "name": "nightly-ai-web-scan",
+      "prompt": "Every day at 23:20 WIB (Asia/Jakarta), perform a fast, read-only Indonesian web research scan.\n\nPriority order must follow Maia's instruction exactly:\n1) AI agents / autonomous agents / agent workflows / tool-using assistants\n2) Hermes / Hermes Agent / workflows or tools that Hermes can learn from directly\n3) Broader AI developments only if they materially affect AI agents or Hermes\n\nSource priorities:\n- Official product/company blogs and announcements\n- GitHub repos, release notes, and changelogs\n- arXiv or reputable research summaries\n- Reputable reporting only when primary sources are not enough\n\nGoal:\n- Extract practical, reusable learning for Hermes from recent developments.\n- Avoid generic AI news unless it clearly matters for agent capabilities, tooling, or Hermes-like strategy.\n\nHard constraints:\n- Finish within 5 minutes.\n- Use at most 4 source items total.\n- Prioritize recency and credibility over quantity.\n- Do not fabricate findings, dates, or source details.\n\nRequired output in Indonesian:\n1) 3-4 poin perkembangan paling penting, ordered by the priority above\n2) Apa pelajaran yang bisa diserap Hermes\n3) Mengapa ini penting\n4) Sumber\n5) Apa yang belum bisa diverifikasi",
       "skills": [],
       "skill": null,
       "model": null,
       "provider": null,
       "base_url": null,
       "schedule": {
-        "kind": "once",
-        "run_at": "2026-04-05T08:00:00+07:00",
-        "display": "once at 2026-04-05 08:00"
+        "kind": "cron",
+        "expr": "20 23 * * *",
+        "display": "20 23 * * *"
       },
-      "schedule_display": "once at 2026-04-05 08:00",
+      "schedule_display": "20 23 * * *",
       "repeat": {
-        "times": 1,
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-05T01:24:09.532058+07:00",
+      "next_run_at": "2026-04-05T23:20:00+07:00",
+      "last_run_at": "2026-04-05T01:48:30.309907+07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1556527473",
+        "chat_name": "Maia",
+        "thread_id": null
+      }
+    },
+    {
+      "id": "6416f56585a1",
+      "name": "morning-ai-digest-daily-0800-wib",
+      "prompt": "Every day at 08:00 WIB (Asia/Jakarta), send Maia a concise Indonesian morning digest about the latest developments in AI, AI agents, Hermes/Hermes Agent, and related tooling.\n\nPriority order must follow Maia's instruction exactly:\n1) AI agents / autonomous agents / agent workflows / tool-using assistants\n2) Hermes / Hermes Agent / workflows or tools that Hermes can learn from directly\n3) Broader AI developments only if they are clearly relevant to priorities 1 or 2\n\nFirst, inspect the most recent local outputs from these job directories:\n- Social scan job ID: bbe983d1ef56 at /home/ubuntu/.hermes/cron/output/bbe983d1ef56/\n- Regular web scan job ID: 5e591a7be711 at /home/ubuntu/.hermes/cron/output/5e591a7be711/\n- Web catch-up job ID: e119e76b4bb1 at /home/ubuntu/.hermes/cron/output/e119e76b4bb1/\n\nWorkflow:\n1) Read the newest available output from the social scan.\n2) Read the newest available output from the regular web scan if present; otherwise use the newest output from the web catch-up job if present.\n3) Combine only the strongest verified findings.\n4) Explicitly state what Hermes can learn from them.\n5) If needed, spend at most 2 additional minutes checking up to 2 fresh public sources to confirm or update the most important items.\n6) Deliver one combined digest to Maia, ordered by the priority above.\n\nHard constraints:\n- Finish within 7 minutes total.\n- Use at most 6 total sources.\n- Be honest if one nightly job failed, produced no useful results, or if social access was limited.\n- Never fabricate findings or source details.\n- Read-only only. No posting, liking, commenting, following, DM, or account changes.\n\nRequired output in Indonesian:\n1) 5 poin utama pagi ini\n2) Apa pelajaran yang bisa diserap Hermes\n3) Kenapa penting\n4) Sumber untuk tiap klaim utama\n5) Apa yang belum bisa diverifikasi\n6) Catatan singkat: status scan sosial dan status scan web malam sebelumnya",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
         "completed": 0
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
-      "created_at": "2026-04-05T00:52:52.129135+07:00",
+      "created_at": "2026-04-05T01:24:34.095791+07:00",
       "next_run_at": "2026-04-05T08:00:00+07:00",
       "last_run_at": null,
       "last_status": null,
@@ -109,5 +145,5 @@
       }
     }
   ],
-  "updated_at": "2026-04-05T01:15:16.799074+07:00"
+  "updated_at": "2026-04-05T01:49:30.313460+07:00"
 }
