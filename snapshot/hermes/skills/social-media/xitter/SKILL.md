@@ -125,6 +125,8 @@ x-cli me mentions --max 5
 
 If reads work but writes fail, regenerate the access token after confirming `Read and write` permissions.
 
+If the Bearer token copied from the portal contains URL-encoded characters like `%2B` or `%3D`, normalize it before use (or regenerate it from the consumer key + secret via `POST /oauth2/token`). If the API returns `402 Payment Required` with a `CreditsDepleted` error, the app credentials are valid but the enrolled X developer account has no available API credits.
+
 ## Common Commands
 
 ### Tweets
