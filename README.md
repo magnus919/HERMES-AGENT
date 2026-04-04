@@ -46,6 +46,7 @@ It is intended to remain private.
 - `scripts/sync_hermes_snapshot.py` — refresh the snapshot and system reports
 - `scripts/auto_commit.sh` — sync, commit changes, and push to GitHub
 - `scripts/restore_hermes_snapshot.py` — restore the snapshot onto another machine
+- `scripts/cron_prompt.txt` — reusable prompt for recreating the Hermes auto-sync cron job on another machine
 
 ## Manual sync
 
@@ -73,6 +74,17 @@ python3 scripts/restore_hermes_snapshot.py
 ```
 
 4. Restart Hermes / gateway after restore.
+5. Recreate the automatic backup cron job:
+
+```bash
+cd HERMES-AGENT
+hermes cron create "every 30m" "$(cat scripts/cron_prompt.txt)" --name sync-hermes-agent-backup --deliver local
+```
+
+## Auto-sync status on this machine
+
+An automatic Hermes cron job is enabled to run the backup every 30 minutes.
+Current job name: `sync-hermes-agent-backup`
 
 ## Reports
 

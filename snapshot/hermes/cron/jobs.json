@@ -1,0 +1,41 @@
+{
+  "jobs": [
+    {
+      "id": "7877c96780c6",
+      "name": "sync-hermes-agent-backup",
+      "prompt": "Maintain the private Hermes backup repository at /home/ubuntu/HERMES-AGENT. Use the terminal tool. Run exactly: `cd /home/ubuntu/HERMES-AGENT && bash scripts/auto_commit.sh`. Do not reveal or print secrets. If the command reports no changes, reply with `No backup changes detected.` If it succeeds with a commit and push, reply with a short confirmation including the new commit hash if available. If it fails, reply with a short error summary only.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 30,
+        "display": "every 30m"
+      },
+      "schedule_display": "every 30m",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-04T20:51:37.493941+08:00",
+      "next_run_at": "2026-04-04T21:21:37.493983+08:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1556527473",
+        "chat_name": "Maia",
+        "thread_id": null
+      }
+    }
+  ],
+  "updated_at": "2026-04-04T20:51:37.494221+08:00"
+}
