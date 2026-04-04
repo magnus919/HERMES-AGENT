@@ -7,3 +7,5 @@ Grants standing authorization for routine sudo/system changes and sensitive-data
 Prefers very high-depth reasoning ('xhigh') by default.
 §
 User prefers Indonesian. User wants to be addressed as 'Master Faris'. User wants assistant to be called 'Anindhita Berliana Putri'.
+§
+User prefers communicating in Indonesian.
