@@ -24,7 +24,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-05T01:14:56.382316+07:00",
+      "next_run_at": "2026-04-05T01:45:16.798875+07:00",
       "last_run_at": "2026-04-05T01:26:04.052069+08:00",
       "last_status": "ok",
       "last_error": null,
@@ -39,7 +39,7 @@
     {
       "id": "bbe983d1ef56",
       "name": "nightly-ai-social-learning",
-      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only research sweep about AI Agent, Hermes Agent, and broader AI developments for Maia. Prioritize public content discoverable from Threads and Instagram via browser/web search and public pages, then supplement with other high-quality public sources if social results are sparse. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise Indonesian report with: 1) 5-10 key findings, 2) why each finding matters, 3) practical ideas Hermes could learn or apply from the findings, 4) a short watchlist of sources/accounts/topics to revisit next run, and 5) a clear sources section with direct URLs or precise source names for every major claim. Be explicitly honest about uncertainty, access limitations, and what could not be verified. Do not fabricate, bluff, or present guesses as facts. Save only durable, general, reusable lessons to memory when they are stable and non-sensitive; do not save transient news, private content, credentials, or account-specific personal data. If Threads or Instagram public access is limited, clearly say so and fall back to other public AI sources.",
+      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only, sourced Indonesian research sweep for Maia about AI Agent, Hermes Agent, and broader AI developments. Work efficiently and finish within the runtime budget. Prioritize directly accessible public sources in this order: 1) official product/company blogs and release notes, 2) GitHub releases/repos for Hermes or related tooling, 3) reputable public AI news or research sources, 4) directly accessible public Threads/Instagram profile or post pages only when they load cleanly without login or challenge pages. Important constraints: do not use search-engine challenge pages, do not spend more than about 2 minutes on any one blocked source, and if a page shows CAPTCHA, login wall, bot challenge, or unusable JS gate, immediately note the limitation and move on. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise report with 4-8 key findings, why each matters, practical implications for Hermes, and a sources section with direct URLs or precise source names for every major claim. Be explicitly honest about uncertainty, access limitations, and anything not verified. Do not fabricate, bluff, or present guesses as facts.",
       "skills": [],
       "skill": null,
       "model": null,
@@ -53,7 +53,7 @@
       "schedule_display": "30 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 0
+        "completed": 1
       },
       "enabled": true,
       "state": "scheduled",
@@ -61,9 +61,9 @@
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
       "next_run_at": "2026-04-05T23:30:00+07:00",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
+      "last_run_at": "2026-04-05T00:58:03.592157+07:00",
+      "last_status": "error",
+      "last_error": "TimeoutError: Cron job 'nightly-ai-social-learning' timed out after 10 minutes",
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -75,7 +75,7 @@
     {
       "id": "049db65df94c",
       "name": "morning-ai-digest-0800-wib",
-      "prompt": "At 08:00 WIB, deliver a sourced Indonesian morning digest for Maia about the latest developments in AI Agent, Hermes Agent, and broader AI. Do a fresh, read-only research sweep at run time. Prioritize public content from Threads and Instagram via browser/web search and public pages when accessible, then supplement with other reputable public sources as needed. Do not post, like, comment, reply, edit profiles, or mutate any connected accounts. The report must include: 1) key findings, 2) why they matter, 3) practical implications or learnings Hermes could apply, and 4) a clear sources section with direct URLs or precise source names for every major claim. Be fully honest about uncertainty, access limitations, and anything unverified. Do not fabricate, bluff, or present guesses as facts.",
+      "prompt": "At 08:00 WIB, deliver a sourced Indonesian morning digest for Maia about the latest developments in AI Agent, Hermes Agent, and broader AI. Work efficiently and finish within the runtime budget. Prioritize directly accessible public sources in this order: 1) official product/company blogs and release notes, 2) GitHub releases/repos for Hermes or related tooling, 3) reputable public AI news or research sources, 4) directly accessible public Threads/Instagram profile or post pages only when they load cleanly without login or challenge pages. Important constraints: do not use search-engine challenge pages, do not spend more than about 2 minutes on any one blocked source, and if a page shows CAPTCHA, login wall, bot challenge, or unusable JS gate, immediately note the limitation and move on. Do not post, like, comment, reply, edit profiles, or mutate any connected accounts. The report must include key findings, why they matter, practical implications or learnings Hermes could apply, and a clear sources section with direct URLs or precise source names for every major claim. Be fully honest about uncertainty, access limitations, and anything unverified. Do not fabricate, bluff, or present guesses as facts.",
       "skills": [],
       "skill": null,
       "model": null,
@@ -109,5 +109,5 @@
       }
     }
   ],
-  "updated_at": "2026-04-05T00:52:52.129544+07:00"
+  "updated_at": "2026-04-05T01:15:16.799074+07:00"
 }
