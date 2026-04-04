@@ -39,7 +39,7 @@
     {
       "id": "bbe983d1ef56",
       "name": "nightly-ai-social-learning",
-      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only research sweep about AI Agent, Hermes Agent, and broader AI developments for Maia. Prioritize public content discoverable from Threads and Instagram via browser/web search and public pages, then supplement with other high-quality public sources if social results are sparse. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise Indonesian report with: 1) 5-10 key findings, 2) why each finding matters, 3) practical ideas Hermes could learn or apply from the findings, and 4) a short watchlist of sources/accounts/topics to revisit next run. Save only durable, general, reusable lessons to memory when they are stable and non-sensitive; do not save transient news, private content, credentials, or account-specific personal data. If Threads or Instagram public access is limited, clearly say so and fall back to other public AI sources.",
+      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only research sweep about AI Agent, Hermes Agent, and broader AI developments for Maia. Prioritize public content discoverable from Threads and Instagram via browser/web search and public pages, then supplement with other high-quality public sources if social results are sparse. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise Indonesian report with: 1) 5-10 key findings, 2) why each finding matters, 3) practical ideas Hermes could learn or apply from the findings, 4) a short watchlist of sources/accounts/topics to revisit next run, and 5) a clear sources section with direct URLs or precise source names for every major claim. Be explicitly honest about uncertainty, access limitations, and what could not be verified. Do not fabricate, bluff, or present guesses as facts. Save only durable, general, reusable lessons to memory when they are stable and non-sensitive; do not save transient news, private content, credentials, or account-specific personal data. If Threads or Instagram public access is limited, clearly say so and fall back to other public AI sources.",
       "skills": [],
       "skill": null,
       "model": null,
@@ -71,7 +71,43 @@
         "chat_name": "Maia",
         "thread_id": null
       }
+    },
+    {
+      "id": "049db65df94c",
+      "name": "morning-ai-digest-0800-wib",
+      "prompt": "At 08:00 WIB, deliver a sourced Indonesian morning digest for Maia about the latest developments in AI Agent, Hermes Agent, and broader AI. Do a fresh, read-only research sweep at run time. Prioritize public content from Threads and Instagram via browser/web search and public pages when accessible, then supplement with other reputable public sources as needed. Do not post, like, comment, reply, edit profiles, or mutate any connected accounts. The report must include: 1) key findings, 2) why they matter, 3) practical implications or learnings Hermes could apply, and 4) a clear sources section with direct URLs or precise source names for every major claim. Be fully honest about uncertainty, access limitations, and anything unverified. Do not fabricate, bluff, or present guesses as facts.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-04-05T08:00:00+07:00",
+        "display": "once at 2026-04-05 08:00"
+      },
+      "schedule_display": "once at 2026-04-05 08:00",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-05T00:52:52.129135+07:00",
+      "next_run_at": "2026-04-05T08:00:00+07:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1556527473",
+        "chat_name": "Maia",
+        "thread_id": null
+      }
     }
   ],
-  "updated_at": "2026-04-05T00:44:56.382551+07:00"
+  "updated_at": "2026-04-05T00:52:52.129544+07:00"
 }
