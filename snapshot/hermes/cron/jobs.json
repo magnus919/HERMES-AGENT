@@ -24,7 +24,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-05T01:56:04.052069+08:00",
+      "next_run_at": "2026-04-05T01:14:56.382316+07:00",
       "last_run_at": "2026-04-05T01:26:04.052069+08:00",
       "last_status": "ok",
       "last_error": null,
@@ -39,7 +39,7 @@
     {
       "id": "bbe983d1ef56",
       "name": "nightly-ai-social-learning",
-      "prompt": "Every day at 23:30 local server time (+08:00), perform a read-only research sweep about AI Agent, Hermes Agent, and broader AI developments for Maia. Prioritize public content discoverable from Threads and Instagram via browser/web search and public pages, then supplement with other high-quality public sources if social results are sparse. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise Indonesian report with: 1) 5-10 key findings, 2) why each finding matters, 3) practical ideas Hermes could learn or apply from the findings, and 4) a short watchlist of sources/accounts/topics to revisit next run. Save only durable, general, reusable lessons to memory when they are stable and non-sensitive; do not save transient news, private content, credentials, or account-specific personal data. If Threads or Instagram public access is limited, clearly say so and fall back to other public AI sources.",
+      "prompt": "Every day at 23:30 local server time (WIB / GMT+7 / Asia/Jakarta), perform a read-only research sweep about AI Agent, Hermes Agent, and broader AI developments for Maia. Prioritize public content discoverable from Threads and Instagram via browser/web search and public pages, then supplement with other high-quality public sources if social results are sparse. Do not post, like, comment, reply, edit profiles, create schedules, or mutate any connected accounts. Produce a concise Indonesian report with: 1) 5-10 key findings, 2) why each finding matters, 3) practical ideas Hermes could learn or apply from the findings, and 4) a short watchlist of sources/accounts/topics to revisit next run. Save only durable, general, reusable lessons to memory when they are stable and non-sensitive; do not save transient news, private content, credentials, or account-specific personal data. If Threads or Instagram public access is limited, clearly say so and fall back to other public AI sources.",
       "skills": [],
       "skill": null,
       "model": null,
@@ -60,7 +60,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
-      "next_run_at": "2026-04-05T23:30:00+08:00",
+      "next_run_at": "2026-04-05T23:30:00+07:00",
       "last_run_at": null,
       "last_status": null,
       "last_error": null,
@@ -73,5 +73,5 @@
       }
     }
   ],
-  "updated_at": "2026-04-05T01:40:11.477464+08:00"
+  "updated_at": "2026-04-05T00:44:56.382551+07:00"
 }

@@ -29,7 +29,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 1907
+    "size_bytes": 1964
   },
   {
     "src": "/home/ubuntu/.hermes/skills",
@@ -53,7 +53,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 447
+    "size_bytes": 563
   },
   {
     "src": "/home/ubuntu/.hermes/channel_directory.json",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 12510
+    "size_bytes": 12530
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
