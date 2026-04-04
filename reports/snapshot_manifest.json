@@ -13,7 +13,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 1117
+    "size_bytes": 1111
   },
   {
     "src": "/home/ubuntu/.hermes/auth.json",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 8583
+    "size_bytes": 9604
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -107,7 +107,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 1117
+    "size_bytes": 1111
   },
   {
     "src": "/etc/apache2/sites-available/assetloan.my.id.conf",
