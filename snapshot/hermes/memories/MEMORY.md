@@ -11,3 +11,5 @@ Di environment Hermes ini, transport WhatsApp yang sedang terhubung untuk chat t
 Server timezone is set to Asia/Jakarta (WIB / GMT+7).
 §
 Repliz wrapper can confirm connected Threads account access, but the currently installed repliz-api CLI only exposes account/schedule/queue operations; it does not yet provide a read-post/feed command.
+§
+Di grup WhatsApp 120363295261781239, jangan kirim pesan kecuali Master Faris secara eksplisit meminta untuk lanjut/aktif lagi.
