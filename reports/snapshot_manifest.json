@@ -61,7 +61,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 576
+    "size_bytes": 722
   },
   {
     "src": "/home/ubuntu/.hermes/profiles",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 75470
+    "size_bytes": 76493
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
