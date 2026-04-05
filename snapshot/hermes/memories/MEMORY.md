@@ -9,3 +9,5 @@ x-cli is installed for X/Twitter access. Current X integration has app key, app 
 Di environment Hermes ini, transport WhatsApp yang sedang terhubung untuk chat tidak boleh diasumsikan sebagai WhatsApp Business Platform/Calling API resmi; untuk voice call WhatsApp perlu verifikasi terpisah di Meta Business/WABA dan kemungkinan akses Calling API/beta.
 §
 Server timezone is set to Asia/Jakarta (WIB / GMT+7).
+§
+Repliz wrapper can confirm connected Threads account access, but the currently installed repliz-api CLI only exposes account/schedule/queue operations; it does not yet provide a read-post/feed command.

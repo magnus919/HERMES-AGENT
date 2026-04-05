@@ -42,7 +42,14 @@ Design the cron prompt to be explicitly bounded.
      - `Never fabricate access, findings, or source details.`
      - `If something cannot be verified, say that clearly.`
 
-6. Require a compact output structure
+6. Add a source-faithful wording rule when the user cares about wording fidelity
+   - Include directives such as:
+     - `Do not turn the findings into a new narrative that goes beyond the source.`
+     - `For each major point, separate verified facts from interpretation.`
+     - `Keep paraphrases minimal and neutral; when wording matters, quote short source phrases.`
+     - `Avoid evaluative language like “strong signal”, “clearly”, “shift”, or “most important” unless the source itself supports that framing.`
+
+7. Require a compact output structure
    - Recommended sections:
      1. `Ringkasan 5 poin terpenting hari ini`
      2. `Mengapa ini penting`
