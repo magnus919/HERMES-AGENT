@@ -65,18 +65,30 @@ def copy_dir(src: Path, dest: Path) -> None:
 def restore() -> dict:
     restored = []
     skipped = []
+    errors = []
     for target in targets():
         src = SNAPSHOT_ROOT / target.src
         if not src.exists():
             skipped.append(str(src))
             continue
-        if target.kind == "file":
-            copy_file(src, target.dest)
-        elif target.kind == "dir":
-            copy_dir(src, target.dest)
-        else:
-            raise ValueError(f"Unknown target kind: {target.kind}")
-        restored.append({"src": str(src), "dest": str(target.dest), "kind": target.kind})
+        # Skip system paths that require root (e.g. /etc/apache2)
+        if str(target.dest).startswith("/etc/") or str(target.dest).startswith("/var/"):
+            skipped.append(f"{src} (system path, requires root)")
+            continue
+        try:
+            if target.kind == "file":
+                copy_file(src, target.dest)
+            elif target.kind == "dir":
+                copy_dir(src, target.dest)
+            else:
+                raise ValueError(f"Unknown target kind: {target.kind}")
+            restored.append({"src": str(src), "dest": str(target.dest), "kind": target.kind})
+        except PermissionError as e:
+            errors.append(f"Permission denied: {target.dest} — {e}")
+            skipped.append(f"{src} (permission denied)")
+        except Exception as e:
+            errors.append(f"Error restoring {target.dest}: {e}")
+            skipped.append(f"{src} ({e})")
 
     for path in [HOME / ".hermes" / ".env", HOME / ".hermes" / "auth.json", HOME / ".git-credentials"]:
         if path.exists():
@@ -117,6 +129,7 @@ def restore() -> dict:
         "repo_root": str(REPO_ROOT),
         "restored_count": len(restored),
         "skipped_missing_snapshot_entries": skipped,
+        "errors": errors,
         "x_cli_install": x_cli_install,
     }
 

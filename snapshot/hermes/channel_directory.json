@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-05T13:56:38.296207",
+  "updated_at": "2026-04-12T02:11:24.515042",
   "platforms": {
     "telegram": [
       {
@@ -9,28 +9,19 @@
         "thread_id": null
       }
     ],
-    "whatsapp": [
-      {
-        "id": "155898873929940@lid",
-        "name": "Muhammad Faris Azmiarif",
-        "type": "dm",
-        "thread_id": null
-      },
-      {
-        "id": "120363295261781239@g.us",
-        "name": "120363295261781239",
-        "type": "group",
-        "thread_id": null
-      },
-      {
-        "id": "196426336329871@lid",
-        "name": "Laptop Computers Service",
-        "type": "dm",
-        "thread_id": null
-      }
-    ],
+    "discord": [],
+    "whatsapp": [],
+    "slack": [],
     "signal": [],
+    "mattermost": [],
+    "matrix": [],
+    "homeassistant": [],
     "email": [],
-    "sms": []
+    "sms": [],
+    "dingtalk": [],
+    "feishu": [],
+    "wecom": [],
+    "weixin": [],
+    "bluebubbles": []
   }
 }

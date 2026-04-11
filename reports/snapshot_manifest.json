@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 7322
+    "size_bytes": 9516
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -21,7 +21,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 4801
+    "size_bytes": 5827
   },
   {
     "src": "/home/ubuntu/.hermes/memories",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 6723174
+    "size_bytes": 8000130
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -61,7 +61,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 722
+    "size_bytes": 477
   },
   {
     "src": "/home/ubuntu/.hermes/profiles",
@@ -114,8 +114,7 @@
     "dest": "/home/ubuntu/HERMES-AGENT/snapshot/system/apache2/sites-available/assetloan.my.id.conf",
     "kind": "file",
     "required": false,
-    "exists": true,
-    "size_bytes": 609
+    "exists": false
   },
   {
     "src": "/home/ubuntu/.gitconfig",
@@ -123,7 +122,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 91
+    "size_bytes": 86
   },
   {
     "src": "/home/ubuntu/.git-credentials",
@@ -131,7 +130,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 74
+    "size_bytes": 60
   },
   {
     "src": "/home/ubuntu/.local/bin/repliz-api",
