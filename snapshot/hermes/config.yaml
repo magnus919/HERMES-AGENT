@@ -246,6 +246,7 @@ approvals:
   mode: manual
   timeout: 60
 command_allowlist:
+- overwrite system file via tee
 - delete in root path
 - in-place edit of system config
 quick_commands: {}

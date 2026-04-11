@@ -46,7 +46,16 @@ sudo mkdir -p /var/www/example.com
 sudo git clone https://github.com/OWNER/REPO.git /var/www/example.com/current
 ```
 
-If it already exists:
+If it already exists and is non-empty (e.g. has a default index.html):
+
+```bash
+# Clone to a temp directory, then copy content — avoids "destination path already exists" error
+sudo git clone https://github.com/OWNER/REPO.git /tmp/repo_clone
+sudo cp -rT /tmp/repo_clone /var/www/example.com/current
+sudo rm -rf /tmp/repo_clone
+```
+
+If it already exists and is a clean git repo:
 
 ```bash
 sudo git -C /var/www/example.com/current pull --ff-only
@@ -149,6 +158,10 @@ Use a known seeded credential from the imported SQL when possible.
 ## Pitfalls
 
 - If the repo ships `.htaccess`, remember `AllowOverride All` and enable `rewrite`.
-- If the domain sits behind Cloudflare, external DNS may resolve to Cloudflare IPs instead of the VPS IP directly. That is fine as long as the origin still serves the site correctly.
+- If the domain sits behind Cloudflare with proxy ON (orange cloud), DNS resolves to Cloudflare IPs — traffic never reaches the VPS directly. Two options:
+  1. Set A record to VPS IP and switch Cloudflare proxy to DNS-only (grey cloud) so traffic goes straight to VPS
+  2. Keep Cloudflare proxy ON and configure Cloudflare to origin-pull/force HTTPS redirect to the VPS
+  - Verify with `dig domain.com A` — should return VPS IP, not Cloudflare IP
+  - Test from VPS with `curl -I http://127.0.0.1/ -H 'Host: domain.com'` to confirm Apache responds correctly regardless of proxy status
 - Avoid committing timestamp-only report churn in backup repos.
 - If you store DB credentials in Apache `SetEnv`, back up the vhost config as part of migration state.
