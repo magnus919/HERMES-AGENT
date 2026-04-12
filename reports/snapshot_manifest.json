@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 8000892
+    "size_bytes": 8002566
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 96659
+    "size_bytes": 107175
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -124,14 +124,6 @@
     "required": false,
     "exists": true,
     "size_bytes": 86
-  },
-  {
-    "src": "/home/ubuntu/.git-credentials",
-    "dest": "/home/ubuntu/HERMES-AGENT/snapshot/home/.git-credentials",
-    "kind": "file",
-    "required": false,
-    "exists": true,
-    "size_bytes": 60
   },
   {
     "src": "/home/ubuntu/.local/bin/repliz-api",

@@ -47,7 +47,7 @@ def targets() -> list[Target]:
         Target(HOME / ".config" / "x-cli" / ".env", "config/x-cli/.env", "file", False),
         Target(Path("/etc/apache2/sites-available/assetloan.my.id.conf"), "system/apache2/sites-available/assetloan.my.id.conf", "file", False),
         Target(HOME / ".gitconfig", "home/.gitconfig", "file", False),
-        Target(HOME / ".git-credentials", "home/.git-credentials", "file", False),
+        # Target(HOME / ".git-credentials", "home/.git-credentials", "file", False),  # SKIPPED - contains secrets
         Target(HOME / ".local" / "bin" / "repliz-api", "home/.local/bin/repliz-api", "file", False),
     ]
 

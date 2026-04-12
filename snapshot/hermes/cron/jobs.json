@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 45
+        "completed": 46
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-12T08:17:17.474540+08:00",
-      "last_run_at": "2026-04-12T07:17:17.435368+08:00",
+      "next_run_at": "2026-04-12T08:54:26.437809+08:00",
+      "last_run_at": "2026-04-12T07:54:05.254205+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -126,15 +126,15 @@
       "schedule_display": "0 8 * * *",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 2
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:34.095791+07:00",
-      "next_run_at": "2026-04-12T08:00:00+08:00",
-      "last_run_at": "2026-04-05T08:03:34.492655+07:00",
+      "next_run_at": "2026-04-13T08:00:00+08:00",
+      "last_run_at": "2026-04-12T08:02:26.406697+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "origin",
@@ -143,8 +143,9 @@
         "chat_id": "1556527473",
         "chat_name": "Maia",
         "thread_id": null
-      }
+      },
+      "last_delivery_error": null
     }
   ],
-  "updated_at": "2026-04-12T07:47:17.474726+08:00"
+  "updated_at": "2026-04-12T08:24:26.437999+08:00"
 }

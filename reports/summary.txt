@@ -1,6 +1,6 @@
-timestamp_utc: 2026-04-11T23:47:24.103430+00:00
+timestamp_utc: 2026-04-12T00:24:31.256724+00:00
 repo_root: /home/ubuntu/HERMES-AGENT
 snapshot_root: /home/ubuntu/HERMES-AGENT/snapshot
-targets_total: 18
-targets_present: 16
+targets_total: 17
+targets_present: 15
 missing_required: 0

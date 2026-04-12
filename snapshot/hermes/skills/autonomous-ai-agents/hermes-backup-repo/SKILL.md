@@ -30,7 +30,8 @@ Include:
 - `~/.hermes/skills/`
 - `~/.hermes/pairing/`
 - optional Hermes state directories/files if present: `profiles/`, `cron/`, `plugins/`, `gateway_state.json`, `channel_directory.json`
-- important external integrations stored outside `~/.hermes/` (for example `~/.config/himalaya/`, `~/.config/x-cli/.env`, `~/.gitconfig`, `~/.git-credentials`, wrapper scripts in `~/.local/bin/`)
+- important external integrations stored outside `~/.hermes/` (for example `~/.config/himalaya/`, `~/.config/x-cli/.env`, `~/.gitconfig`, wrapper scripts in `~/.local/bin/`)
+  - NOTE: do NOT back up `~/.git-credentials` — it contains secrets that trigger GitHub Push Protection blocks
 
 Exclude:
 - session transcripts unless the user explicitly wants them
@@ -39,6 +40,7 @@ Exclude:
 - lock files
 - `__pycache__`, `.pyc`
 - the Hermes source checkout at `~/.hermes/hermes-agent/`
+- `~/.git-credentials` — contains GitHub PAT tokens and other secrets. GitHub Push Protection will permanently block any push that contains a secret, even after the commit is rewritten/removed from history. The block must be manually cleared at `https://github.com/<owner>/<repo>/security/secret-scanning/unblock-secret/<secret-id>`.
 
 ## Layout
 
@@ -97,3 +99,15 @@ Have the cron return only a short status and never print secrets.
 - X/Twitter via `x-cli` stores credentials in `~/.config/x-cli/.env`; back that file up explicitly if X integration is configured.
 - If the restored machine has `uv` but not `x-cli`, have the restore script attempt `uv tool install git+https://github.com/Infatoshi/x-cli.git` automatically when an `x-cli` env file was restored.
 - Hermes cron state may appear later under `~/.hermes/cron/`; include it when present so backup automation configuration is also migrated.
+
+## GitHub Push Protection — unblocking a secret
+
+If a push is rejected with `GH013: Repository rule violations` and `Push cannot contain secrets`, GitHub has detected a secret in the push — possibly from a prior commit that was later removed from history. This block persists even after `git filter-branch` rewrites history because GitHub caches the secret detection by commit SHA.
+
+Steps to resolve:
+1. Visit `https://github.com/<owner>/<repo>/security/secret-scanning/unblock-secret/<secret-id>` (the URL is in the error message) and click "Unblock" to allow the secret. This requires repo owner/admin access.
+2. Rewrite the local history to remove the secret if still present: `git filter-branch --tree-filter 'rm -f <path-to-secret-file>' <bad-commit>^..HEAD`
+3. Force-push the rewritten history: `git push origin main --force`
+4. Update `sync_hermes_snapshot.py` to exclude the file going forward (add to `IGNORE_NAMES` or remove the `Target()` entry), then commit and push the script change.
+
+Prevention: never back up files containing PATs, API keys, or credentials (`~/.git-credentials`, `~/.netrc`, `~/.config/x-cli/.env`, etc.). Store secrets only in `~/.hermes/.env` which is already excluded from git by the `.gitignore` pattern.
