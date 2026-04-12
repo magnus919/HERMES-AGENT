@@ -1,0 +1,75 @@
+---
+name: id-social-media-scan
+description: Fast read-only scan for AI agent content on Indonesian Threads/Instagram and tech blogs. Handles login walls, X.com blockade in Indonesia, and search engine CAPTCHA.
+category: research
+---
+
+# Indonesian Social Media Scan (Threads/Instagram)
+
+Fast read-only scan for AI agent content on Indonesian social platforms.
+
+## Key Finding (discovered 2026-04-12)
+**All major social platforms are blocked for anonymous web access:**
+- **Threads.net** — public search requires Instagram login; shows "No results" + login prompt
+- **Instagram.com** — explore/search requires login
+- **X.com (Twitter)** — blocked in Indonesia since July 2023 (Mashable SEA reported)
+- **Google.com** — triggers CAPTCHA/robots detection from cloud VM IPs
+- **DuckDuckGo** — triggers CAPTCHA for "AI agent" queries
+
+**Work-around:** Yahoo search (search.yahoo.com) successfully returns results. Also: Indonesian tech blogs (help.apiyi.com, qqlink.com) index Hermes Agent content in Indonesian.
+
+## Approach
+
+### Step 1: Yahoo search (working entry point)
+```
+URL: https://search.yahoo.com/search?p=<query>
+```
+- Does NOT require login
+- Returns indexed results from threads.net and other platforms
+- Queries to try:
+  - `"Hermes Agent" Indonesia OR "hermes-agent" Indonesia`
+  - `"AI agent" Indonesia site:threads.net`
+  - `site:reddit.com "AI agent" Indonesia`
+
+### Step 2: Browse found sources
+Use browser_navigate to read actual pages.
+
+### Step 3: Document direct platform failures
+- Threads.net: `https://threads.net/search?q=...` → login wall
+- Instagram: `https://www.instagram.com/explore/search/keyword/?q=...` → login redirect
+- X.com: blocked in Indonesia — skip entirely
+
+### Step 4: Fallback to Indonesian tech blogs
+If Yahoo returns no social platform results, search for Indonesian-language articles:
+- Query: `"Hermes Agent" Indonesia` via Yahoo
+- Browse found blog posts (Apiyi.com, QQLink.com, etc.)
+
+## Output Format (required, in Indonesian)
+```
+1) Temuan terverifikasi, ordered by priority:
+   - AI agents / autonomous agents / agent workflows
+   - Hermes / Hermes Agent related
+   - Broader AI news only if clearly relevant to above
+
+   For each item:
+   - Sumber (URL + title + date)
+   - Fakta terverifikasi (1-3 bullets, neutral wording)
+   - Pelajaran untuk Hermes (optional, labeled as interpretation)
+
+2) Sumber
+3) Keterbatasan akses / apa yang belum bisa diverifikasi
+```
+
+## Hard Constraints
+- Max 4 minutes total
+- Max 3 source items
+- Read-only only — no login, no posting, no commenting
+- No evaluative framing ("sinyal kuat", "makin bergeser", etc.) unless source uses it
+- If Threads/Instagram public access fails, document clearly — do not fabricate
+
+## Known Limitations
+- Threads public search: login required (no public API)
+- Instagram public search: login required
+- X.com in Indonesia: government-blocked
+- Cloud VM IPs: frequently get CAPTCHA'd by Google/DuckDuckGo
+- Unindexed content (private accounts, non-public posts) is invisible
