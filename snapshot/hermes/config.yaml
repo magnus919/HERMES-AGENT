@@ -1,6 +1,7 @@
 model:
   default: MiniMax-M2.7-highspeed
   provider: ai.sumopod.com
+  context_length: 204800
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -12,7 +13,7 @@ credential_pool_strategies: {}
 toolsets:
 - hermes-cli
 agent:
-  max_turns: 60
+  max_turns: 100
   gateway_timeout: 1800
   restart_drain_timeout: 60
   service_tier: ''
@@ -208,7 +209,7 @@ voice:
   max_recording_seconds: 120
   auto_tts: false
   silence_threshold: 200
-  silence_duration: 3.0
+  silence_duration: 3
 human_delay:
   mode: 'off'
   min_ms: 800
@@ -241,6 +242,7 @@ skills:
   config:
     wiki:
       path: ~/wiki
+  disabled: []
 honcho: {}
 timezone: ''
 discord:
@@ -276,7 +278,6 @@ logging:
   backup_count: 3
 network:
   force_ipv4: false
-_config_version: 14
 session_reset:
   mode: both
   idle_minutes: 1440

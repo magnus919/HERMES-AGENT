@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 9599
+    "size_bytes": 9618
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 281108
+    "size_bytes": 282282
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
