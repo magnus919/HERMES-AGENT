@@ -1,9 +1,12 @@
 model:
   default: MiniMax-M2.7-highspeed
-  provider: custom
-  base_url: https://ai.sumopod.com/v1
-  api_key: sk-1svdORUiLFNebChfJ4TPXw
-providers: {}
+  provider: ai.sumopod.com
+providers:
+  ai.sumopod.com:
+    api: https://ai.sumopod.com/v1
+    name: Ai.sumopod.com
+    api_key: sk-1svdORUiLFNebChfJ4TPXw
+    default_model: MiniMax-M2.7-highspeed
 fallback_providers: []
 credential_pool_strategies: {}
 toolsets:
@@ -15,6 +18,7 @@ agent:
   service_tier: ''
   tool_use_enforcement: auto
   gateway_timeout_warning: 900
+  gateway_notify_interval: 600
   verbose: false
   reasoning_effort: xhigh
   personalities:
@@ -162,9 +166,11 @@ display:
   inline_diffs: true
   show_cost: false
   skin: default
+  interim_assistant_messages: true
   tool_progress_command: false
   tool_progress_overrides: {}
   tool_preview_length: 0
+  platforms: {}
   tool_progress: all
   background_process_notifications: all
 privacy:
@@ -197,7 +203,6 @@ stt:
     model: whisper-1
   mistral:
     model: voxtral-mini-latest
-  model: whisper-1
 voice:
   record_key: ctrl+b
   max_recording_seconds: 120
@@ -233,6 +238,9 @@ prefill_messages_file: ''
 skills:
   external_dirs: []
   creation_nudge_interval: 15
+  config:
+    wiki:
+      path: ~/wiki
 honcho: {}
 timezone: ''
 discord:
@@ -266,7 +274,9 @@ logging:
   level: INFO
   max_size_mb: 5
   backup_count: 3
-_config_version: 11
+network:
+  force_ipv4: false
+_config_version: 14
 session_reset:
   mode: both
   idle_minutes: 1440
@@ -294,14 +304,6 @@ code_execution:
   max_tool_calls: 50
 TELEGRAM_HOME_CHANNEL: '1556527473'
 WHATSAPP_HOME_CHANNEL: 155898873929940@lid
-custom_providers:
-- name: Ai.sumopod.com
-  base_url: https://ai.sumopod.com/v1
-  api_key: sk-1svdORUiLFNebChfJ4TPXw
-  model: MiniMax-M2.7-highspeed
-  models:
-    MiniMax-M2.7-highspeed:
-      context_length: 204800
 
 # ── Fallback Model ────────────────────────────────────────────────────
 # Automatic provider failover when primary is unavailable.
@@ -314,6 +316,7 @@ custom_providers:
 #   nous         (OAuth — hermes auth) — Nous Portal
 #   zai          (ZAI_API_KEY)         — Z.AI / GLM
 #   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
 #   minimax      (MINIMAX_API_KEY)     — MiniMax
 #   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
 #

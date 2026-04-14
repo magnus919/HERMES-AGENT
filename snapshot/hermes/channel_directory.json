@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T15:01:09.682185",
+  "updated_at": "2026-04-14T15:31:04.401325",
   "platforms": {
     "telegram": [
       {
@@ -21,7 +21,9 @@
     "dingtalk": [],
     "feishu": [],
     "wecom": [],
+    "wecom_callback": [],
     "weixin": [],
-    "bluebubbles": []
+    "bluebubbles": [],
+    "qqbot": []
   }
 }

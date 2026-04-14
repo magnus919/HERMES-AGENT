@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 9527
+    "size_bytes": 9599
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 8007721
+    "size_bytes": 8013207
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -53,7 +53,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 563
+    "size_bytes": 582
   },
   {
     "src": "/home/ubuntu/.hermes/channel_directory.json",
@@ -61,7 +61,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 477
+    "size_bytes": 520
   },
   {
     "src": "/home/ubuntu/.hermes/profiles",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 278715
+    "size_bytes": 279900
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
