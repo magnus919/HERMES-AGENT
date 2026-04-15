@@ -1,6 +1,6 @@
 Prefers to be addressed as Master Faris.
 §
-Grants standing authorization for routine sudo/system changes and sensitive-data operations in this environment; prefers not to be asked for routine approval prompts.
+Grants full standing authorization for all system/VPS operations (full sudo), Hermes Agent codebase access/modification, skills, memory, cron jobs, config, and agent internals — no separate confirmation needed.
 §
 Prefers very high-depth reasoning ('xhigh') by default.
 §
