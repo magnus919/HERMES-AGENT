@@ -3,3 +3,5 @@
 [user]
 	email = azmiariffaris@gmail.com
 	name = azmiariffaris
+[safe]
+	directory = /var/www/assetloan.my.id

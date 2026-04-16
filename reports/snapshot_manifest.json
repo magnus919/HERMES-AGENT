@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 433087
+    "size_bytes": 434256
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -123,7 +123,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 86
+    "size_bytes": 131
   },
   {
     "src": "/home/ubuntu/.local/bin/repliz-api",
