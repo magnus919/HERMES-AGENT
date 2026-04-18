@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 9618
+    "size_bytes": 9948
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -45,7 +45,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 137
+    "size_bytes": 548
   },
   {
     "src": "/home/ubuntu/.hermes/gateway_state.json",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 434256
+    "size_bytes": 551276
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -115,7 +115,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 385
+    "size_bytes": 241
   },
   {
     "src": "/home/ubuntu/.gitconfig",

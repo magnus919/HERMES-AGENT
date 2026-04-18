@@ -1,7 +1,9 @@
 model:
   default: MiniMax-M2.7-highspeed
-  provider: ai.sumopod.com
+  provider: custom
   context_length: 204800
+  base_url: https://ai.sumopod.com/v1
+  api_key: sk-P213yjaGc_cXcrsEIMgI_g
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -257,6 +259,7 @@ approvals:
   timeout: 60
 command_allowlist:
 - overwrite system file via tee
+- copy/move file into /etc/
 - script execution via -e/-c flag
 quick_commands: {}
 personalities: {}
@@ -278,6 +281,7 @@ logging:
   backup_count: 3
 network:
   force_ipv4: false
+_config_version: 17
 session_reset:
   mode: both
   idle_minutes: 1440
@@ -305,6 +309,14 @@ code_execution:
   max_tool_calls: 50
 TELEGRAM_HOME_CHANNEL: '1556527473'
 WHATSAPP_HOME_CHANNEL: 155898873929940@lid
+custom_providers:
+- name: Ai.sumopod.com
+  base_url: https://ai.sumopod.com/v1
+  api_key: sk-P213yjaGc_cXcrsEIMgI_g
+  model: MiniMax-M2.7-highspeed
+  models:
+    MiniMax-M2.7-highspeed:
+      context_length: 204800
 
 # ── Fallback Model ────────────────────────────────────────────────────
 # Automatic provider failover when primary is unavailable.
