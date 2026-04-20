@@ -17,17 +17,17 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 463
+        "completed": 464
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-21T04:51:09.785262+08:00",
-      "last_run_at": "2026-04-21T03:51:09.743177+08:00",
-      "last_status": "error",
-      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
+      "next_run_at": "2026-04-21T05:21:23.667839+08:00",
+      "last_run_at": "2026-04-21T04:21:23.612730+08:00",
+      "last_status": "ok",
+      "last_error": null,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -149,5 +149,5 @@
       "last_delivery_error": null
     }
   ],
-  "updated_at": "2026-04-21T04:21:09.785448+08:00"
+  "updated_at": "2026-04-21T04:51:23.668041+08:00"
 }
