@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-04-20T09:20:34.249878+00:00",
+  "timestamp_utc": "2026-04-20T20:21:15.385135+00:00",
   "hostname": "VM-5-136-ubuntu",
   "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.39",
   "python_version": "3.11.15 (main, Apr  7 2026, 20:48:58) [Clang 22.1.1 ]",
@@ -12,7 +12,7 @@
         "--version"
       ],
       "exit_code": 0,
-      "stdout": "Hermes Agent v0.10.0 (2026.4.16)\nProject: /home/ubuntu/.hermes/hermes-agent\nPython: 3.11.15\nOpenAI SDK: 2.31.0\nUpdate available: 37 commits behind \u2014 run 'hermes update'",
+      "stdout": "Hermes Agent v0.10.0 (2026.4.16)\nProject: /home/ubuntu/.hermes/hermes-agent\nPython: 3.11.15\nOpenAI SDK: 2.31.0\nUpdate available: 151 commits behind \u2014 run 'hermes update'",
       "stderr": ""
     },
     "hermes_memory_status": {
@@ -51,7 +51,7 @@
         "--short"
       ],
       "exit_code": 0,
-      "stdout": "M snapshot/hermes/channel_directory.json\n M snapshot/hermes/cron/jobs.json\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_16-50-28.md\n?? snapshot/hermes/skills/social-media/baileys-whatsapp-gateway/",
+      "stdout": "M snapshot/hermes/auth.json\n M snapshot/hermes/channel_directory.json\n M snapshot/hermes/cron/jobs.json\n M snapshot/hermes/memories/MEMORY.md\n M snapshot/hermes/pairing/_rate_limits.json\n M snapshot/hermes/pairing/telegram-pending.json\n?? snapshot/hermes/cron/output/5e591a7be711/2026-04-20_23-20-58.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_17-20-41.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_17-50-42.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_18-20-43.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_18-50-45.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_19-20-46.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_19-50-47.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_20-20-48.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_20-50-49.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_21-20-51.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_21-50-52.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_22-20-53.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_22-50-54.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_23-20-57.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_23-50-59.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_00-21-00.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_00-51-02.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_01-21-03.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_01-51-04.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_02-21-06.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_02-51-07.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_03-21-08.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-21_03-51-09.md\n?? snapshot/hermes/cron/output/bbe983d1ef56/2026-04-20_23-05-56.md\n?? snapshot/hermes/skills/social-media/baileys-whatsapp-gateway/references/",
       "stderr": ""
     },
     "repo_git_remote": {

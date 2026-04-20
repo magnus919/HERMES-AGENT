@@ -29,7 +29,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 2501
+    "size_bytes": 2739
   },
   {
     "src": "/home/ubuntu/.hermes/skills",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 8814389
+    "size_bytes": 8820592
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -45,7 +45,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 548
+    "size_bytes": 304
   },
   {
     "src": "/home/ubuntu/.hermes/gateway_state.json",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 702187
+    "size_bytes": 732586
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
