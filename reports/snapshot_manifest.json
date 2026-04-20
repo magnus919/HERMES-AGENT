@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 8281550
+    "size_bytes": 8282431
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -53,7 +53,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 655
+    "size_bytes": 583
   },
   {
     "src": "/home/ubuntu/.hermes/channel_directory.json",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 691643
+    "size_bytes": 695172
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",

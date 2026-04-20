@@ -133,3 +133,29 @@ Expected column indices in code: Kode=0, Nama=2, Satuan=4, HargaJual=6, Stok=7, 
 ### WhatsApp not receiving replies
 → Check webhook URL is accessible from n8n
 → Verify WhatsApp bridge is running on port 3000
+
+### WhatsApp Bridge: Port 3000 EADDRINUSE or QR not generating
+The bridge crashes or won't restart — follow this exact sequence:
+```bash
+# 1. Kill ALL bridge processes
+pkill -f "whatsapp-bridge" 2>/dev/null; sleep 2
+
+# 2. Verify port is free
+lsof -i :3000  # should return empty
+
+# 3. Start fresh (run in background)
+cd /home/ubuntu/.hermes/hermes-agent && \
+  node scripts/whatsapp-bridge/bridge.js \
+    --port 3000 \
+    --session ~/.hermes/whatsapp/session \
+    --mode bot \
+    --webhook-url "https://azmiariffaris.app.n8n.cloud/webhook/whatsapp-stok" \
+    > ~/.hermes/whatsapp-bridge.log 2>&1 &
+
+# 4. Wait and check QR
+sleep 3 && cat ~/.hermes/whatsapp-bridge.log | grep QR
+```
+
+QR code is saved to: `/home/ubuntu/whatsapp_qr.png`
+WhatsApp bridge log: `~/.hermes/whatsapp-bridge.log`
+Process session ID for monitoring: `proc_c00f5365caf9` (example — check actual PID)
