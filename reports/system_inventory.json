@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-04-20T06:19:23.197544+00:00",
+  "timestamp_utc": "2026-04-20T06:49:35.413245+00:00",
   "hostname": "VM-5-136-ubuntu",
   "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.39",
   "python_version": "3.11.15 (main, Apr  7 2026, 20:48:58) [Clang 22.1.1 ]",
@@ -51,7 +51,7 @@
         "--short"
       ],
       "exit_code": 0,
-      "stdout": "M snapshot/hermes/auth.json\n M snapshot/hermes/channel_directory.json\n M snapshot/hermes/cron/jobs.json\n M snapshot/hermes/gateway_state.json\n M snapshot/hermes/skills/productivity/n8n-whatsapp-stok-logic/SKILL.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_12-49-15.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_13-19-16.md\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_13-49-17.md",
+      "stdout": "M snapshot/hermes/channel_directory.json\n M snapshot/hermes/config.yaml\n M snapshot/hermes/cron/jobs.json\n?? snapshot/hermes/cron/output/7877c96780c6/2026-04-20_14-19-29.md\n?? snapshot/hermes/skills/gog/\n?? snapshot/hermes/skills/n8n-automation/",
       "stderr": ""
     },
     "repo_git_remote": {

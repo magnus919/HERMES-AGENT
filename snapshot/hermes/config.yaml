@@ -292,10 +292,12 @@ approvals:
   timeout: 60
   cron_mode: deny
 command_allowlist:
+- delete in root path
+- recursive delete
 - script execution via -e/-c flag
+- copy/move file into /etc/
 - script execution via heredoc
 - overwrite system file via tee
-- copy/move file into /etc/
 quick_commands: {}
 personalities: {}
 security:

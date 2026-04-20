@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T14:17:17.990160",
+  "updated_at": "2026-04-20T14:47:29.823447",
   "platforms": {
     "telegram": [
       {
@@ -10,7 +10,14 @@
       }
     ],
     "discord": [],
-    "whatsapp": [],
+    "whatsapp": [
+      {
+        "id": "155898873929940@lid",
+        "name": "Muhammad Faris Azmiarif",
+        "type": "dm",
+        "thread_id": null
+      }
+    ],
     "slack": [],
     "signal": [],
     "mattermost": [],
