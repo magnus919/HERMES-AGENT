@@ -15,3 +15,5 @@ Repliz wrapper can confirm connected Threads account access, but the currently i
 Di grup WhatsApp 120363295261781239, jangan kirim pesan kecuali Master Faris secara eksplisit meminta untuk lanjut/aktif lagi.
 §
 assetloan.my.id sudah di-deploy dengan Apache + MySQL + PHP ke /var/www/assetloan.my.id, database 'peminjaman' dengan user 'peminjaman_app'. Repo PROJECT azmiariffaris/PROJECT sudah di-clone ke server. DNS assetloan.my.id belum diarahkan ke IP server ini.
+§
+ClawTeam di system ini sekarang v0.3.0 (bukan v0.2.0). Diupdate dari GitHub karena GitHub ahead of PyPI. Skill sudah diupdate juga. Binary symlinked ke /usr/local/bin/{clawteam,oh} → /home/ubuntu/clawteam-venv/bin/

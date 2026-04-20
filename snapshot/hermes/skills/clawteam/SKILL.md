@@ -6,7 +6,7 @@ description: >
   spawning worker agents, task management, dan inter-agent messaging.
   ClawTeam provides: team management, task delegation, inbox messaging,
   board monitoring, git worktree workspace isolation, dan P2P transport.
-version: 0.2.0
+version: 0.3.0
 ---
 
 # ClawTeam — Agent Swarm Intelligence
@@ -22,7 +22,7 @@ export PATH="/home/ubuntu/clawteam-venv/bin:$PATH"
 export CLAWTEAM_DATA_DIR=/home/ubuntu/.clawteam
 
 # Verifikasi installation
-clawteam --version   # clawteam v0.2.0
+clawteam --version   # clawteam v0.3.0
 oh --version
 ```
 
@@ -201,8 +201,14 @@ workspace: auto
 
 - Python ≥3.10
 - tmux 3.4+ (installed at /usr/bin/tmux)
-- clawteam v0.2.0 (installed at /home/ubuntu/clawteam-venv/bin/clawteam)
-- Default agent command: claude (but can use any CLI agent or subprocess)
+- clawteam v0.3.0 (installed at /home/ubuntu/clawteam-venv/bin/clawteam)
+
+## New in v0.3.0 (since v0.2.0)
+- **Headless runtime delivery** for subprocess agents — no GUI needed
+- **Keepalive recovery** and docker nanobot runtime support
+- **Generalized runtime injection** for interactive backends
+- **Improved leader spawn identity** and hardened regressions
+- **Support for stdin content** in inbox send
 
 ## Catatan Penting
 
@@ -210,3 +216,47 @@ workspace: auto
 - Data disimpan di `/home/ubuntu/.clawteam/`
 - Transport default: file-based (cocok untuk single machine)
 - Untuk multi-machine, gunakan `oh config set transport p2p` (butuh pyzmq)
+
+## Maintenance — Updating ClawTeam
+
+**IMPORTANT: PyPI often lags behind GitHub.** ClawTeam maintainers (HKUDS) release to GitHub more frequently than to PyPI. Always check both.
+
+### Check for Updates
+
+```bash
+# Check PyPI version (may be behind)
+pip index versions clawteam
+
+# Check GitHub tags page: https://github.com/HKUDS/ClawTeam/tags
+# Compare commit dates — GitHub is usually ahead
+```
+
+### Update Workflow (when GitHub is ahead of PyPI)
+
+```bash
+# 1. Clone latest from GitHub to temp dir
+cd /tmp && git clone https://github.com/HKUDS/ClawTeam.git clawteam-github
+
+# 2. Check pyproject.toml for actual version
+cat /tmp/clawteam-github/pyproject.toml | grep "^version"
+
+# 3. Install from source (editable mode)
+#    Use the venv's pip, NOT system pip (to avoid PEP 668 conflicts)
+/home/ubuntu/clawteam-venv/bin/pip install -e /tmp/clawteam-github
+
+# 4. Verify
+clawteam --version
+
+# 5. Cleanup
+rm -rf /tmp/clawteam-github
+```
+
+### Why `pip install --upgrade` isn't enough
+
+```
+PyPI latest:     v0.2.0 (Mar 23, 2026)
+GitHub latest:   v0.3.0 commit a3b124c (Apr 15, 2026)
+pip index:       Only checks PyPI → shows outdated info
+```
+
+**Lesson learned:** For rapidly-evolving GitHub-first projects, `pip install --upgrade` checks PyPI only. Always verify against GitHub tags when update freshness matters.
