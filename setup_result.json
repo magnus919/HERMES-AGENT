@@ -1,0 +1,9 @@
+{
+  "hermes_installed": true,
+  "restore": {
+    "error": "Traceback (most recent call last):\n  File \"/home/ubuntu/HERMES-AGENT/scripts/restore_hermes_snapshot.py\", line 197, in <module>\n    result = restore()\n             ^^^^^^^^^\n  File \"/home/ubuntu/HERMES-AGENT/scripts/restore_hermes_snapshot.py\", line 182, in restore\n    symlink.unlink()\n  File \"/home/ubuntu/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/pathlib.py\", line 1147, in unlink\n    os.unlink(self)\nPermissionError: [Errno 13] Permission denied: '/usr/local/bin/clawteam'\n"
+  },
+  "cron": {
+    "status": "already_exists"
+  }
+}

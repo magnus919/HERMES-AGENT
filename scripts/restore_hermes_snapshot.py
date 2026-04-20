@@ -125,12 +125,71 @@ def restore() -> dict:
         else:
             x_cli_install["status"] = "uv_missing"
 
+    # Install/upgrade ClawTeam from GitHub
+    clawteam_install = {"attempted": False, "installed": False, "version": None}
+    clawteam_install["attempted"] = True
+    clawteam_venv = HOME / "clawteam-venv"
+    clawteam_bin = clawteam_venv / "bin"
+
+    # Check if already installed
+    existing_version = None
+    if clawteam_bin.exists():
+        result = subprocess.run(
+            [str(clawteam_bin / "clawteam"), "--version"],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            existing_version = result.stdout.strip()
+
+    # Create venv and install latest from GitHub
+    import sys
+    if not clawteam_venv.exists():
+        result = subprocess.run(
+            [sys.executable, "-m", "venv", str(clawteam_venv)],
+            capture_output=True, text=True
+        )
+        if result.returncode != 0:
+            clawteam_install["status"] = "venv_create_failed"
+            clawteam_install["stderr"] = result.stderr.strip().splitlines()[-3:]
+        else:
+            clawteam_install["status"] = "venv_created"
+
+    if clawteam_venv.exists():
+        result = subprocess.run(
+            [str(clawteam_bin / "pip"), "install", "-e",
+             "git+https://github.com/HKUDS/ClawTeam.git#egg=clawteam"],
+            capture_output=True, text=True
+        )
+        clawteam_install["installed"] = result.returncode == 0
+        if result.returncode == 0:
+            clawteam_install["status"] = "installed"
+            # Get new version
+            result = subprocess.run(
+                [str(clawteam_bin / "clawteam"), "--version"],
+                capture_output=True, text=True
+            )
+            if result.returncode == 0:
+                clawteam_install["version"] = result.stdout.strip()
+        else:
+            clawteam_install["status"] = "install_failed"
+            clawteam_install["stderr"] = result.stderr.strip().splitlines()[-3:]
+
+        # Create symlinks in /usr/local/bin
+        for name in ["clawteam", "oh"]:
+            symlink = Path("/usr/local/bin") / name
+            target = clawteam_bin / name
+            if symlink.exists() or symlink.is_symlink():
+                symlink.unlink()
+            if target.exists():
+                symlink.symlink_to(target)
+
     return {
         "repo_root": str(REPO_ROOT),
         "restored_count": len(restored),
         "skipped_missing_snapshot_entries": skipped,
         "errors": errors,
         "x_cli_install": x_cli_install,
+        "clawteam_install": clawteam_install,
     }
 
 
