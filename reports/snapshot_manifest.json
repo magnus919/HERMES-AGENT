@@ -5,7 +5,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 9948
+    "size_bytes": 10572
   },
   {
     "src": "/home/ubuntu/.hermes/.env",
@@ -21,7 +21,7 @@
     "kind": "file",
     "required": true,
     "exists": true,
-    "size_bytes": 2242
+    "size_bytes": 2498
   },
   {
     "src": "/home/ubuntu/.hermes/memories",
@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 8018238
+    "size_bytes": 8259784
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 641850
+    "size_bytes": 683353
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",

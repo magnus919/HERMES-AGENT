@@ -3,7 +3,7 @@ model:
   provider: custom
   context_length: 204800
   base_url: https://ai.sumopod.com/v1
-  api_key: sk-P213yjaGc_cXcrsEIMgI_g
+  api_key: sk-GCwzMYz4Eu4UDvoxZNVhGA
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -89,6 +89,7 @@ browser:
   command_timeout: 30
   record_sessions: false
   allow_private_urls: false
+  cdp_url: ''
   camofox:
     managed_persistence: false
 checkpoints:
@@ -103,6 +104,17 @@ compression:
   summary_model: google/gemini-3-flash-preview
   summary_provider: auto
   summary_base_url: null
+bedrock:
+  region: ''
+  discovery:
+    enabled: true
+    provider_filter: []
+    refresh_interval: 3600
+  guardrail:
+    guardrail_identifier: ''
+    guardrail_version: ''
+    stream_processing_mode: async
+    trace: disabled
 smart_model_routing:
   enabled: false
   max_simple_chars: 160
@@ -158,6 +170,12 @@ auxiliary:
     base_url: ''
     api_key: ''
     timeout: 30
+  title_generation:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 30
 display:
   compact: false
   personality: kawaii
@@ -176,6 +194,8 @@ display:
   platforms: {}
   tool_progress: all
   background_process_notifications: all
+dashboard:
+  theme: default
 privacy:
   redact_pii: false
 tts:
@@ -188,6 +208,11 @@ tts:
   openai:
     model: gpt-4o-mini-tts
     voice: alloy
+  xai:
+    voice_id: eve
+    language: en
+    sample_rate: 24000
+    bit_rate: 128000
   mistral:
     model: voxtral-mini-tts-2603
     voice_id: c69964a6-ab8b-4f8a-9465-ec0925096ec8
@@ -253,10 +278,19 @@ discord:
   allowed_channels: ''
   auto_thread: true
   reactions: true
+  channel_prompts: {}
+  server_actions: ''
 whatsapp: {}
+telegram:
+  channel_prompts: {}
+slack:
+  channel_prompts: {}
+mattermost:
+  channel_prompts: {}
 approvals:
   mode: manual
   timeout: 60
+  cron_mode: deny
 command_allowlist:
 - overwrite system file via tee
 - copy/move file into /etc/
@@ -275,6 +309,10 @@ security:
     shared_files: []
 cron:
   wrap_response: true
+code_execution:
+  mode: project
+  timeout: 300
+  max_tool_calls: 50
 logging:
   level: INFO
   max_size_mb: 5
@@ -304,9 +342,6 @@ platform_toolsets:
   - hermes-signal
   homeassistant:
   - hermes-homeassistant
-code_execution:
-  timeout: 300
-  max_tool_calls: 50
 TELEGRAM_HOME_CHANNEL: '1556527473'
 WHATSAPP_HOME_CHANNEL: 155898873929940@lid
 custom_providers:
@@ -333,7 +368,7 @@ custom_providers:
 #   minimax      (MINIMAX_API_KEY)     — MiniMax
 #   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
 #
-# For custom OpenAI-compatible endpoints, add base_url and api_key_env.
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
 #
 # fallback_model:
 #   provider: openrouter
