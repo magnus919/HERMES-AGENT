@@ -1,13 +1,14 @@
 ---
 name: hermes-backup-repo
 description: Create and maintain a private GitHub backup repository for Hermes system state, memory, skills, auth, and local integrations, with automatic sync commits.
-version: 1.0.0
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
-    tags: [Hermes, Backup, GitHub, Migration, Memory, Skills, Cron]
+    tags: [Hermes, Backup, GitHub, Migration, Memory, Skills, Cron, ClawTeam]
     related_skills: [hermes-agent, github-repo-management, github-auth]
+    primary_skills: [clawteam]
 ---
 
 # Hermes Backup Repo
@@ -47,12 +48,14 @@ Exclude:
 Suggested repo structure:
 
 - `README.md`
+- `scripts/first_time_setup.py`     # NEW DEVICE: run this first
 - `scripts/sync_hermes_snapshot.py`
 - `scripts/restore_hermes_snapshot.py`
 - `scripts/auto_commit.sh`
 - `scripts/cron_prompt.txt`
 - `snapshot/...`
 - `reports/...`
+- `setup_result.json`               # Output from first_time_setup.py
 
 ## Creation flow
 
@@ -64,7 +67,55 @@ Suggested repo structure:
 6. Commit and push initial contents.
 7. Set up an automatic cron sync job.
 
-## Auto-sync design
+## Restore Script: Auto-Install External Dependencies
+
+The restore script should not only copy files — it should **auto-install external tools** that are critical for Hermes operation.
+
+**Example: ClawTeam auto-install pattern**
+
+ClawTeam (multi-agent coordination framework) is the **primary skill** for multi-agent tasks. It must be auto-installed from GitHub since PyPI may lag behind:
+
+```python
+# In restore_hermes_snapshot.py, after restoring files:
+clawteam_venv = HOME / "clawteam-venv"
+clawteam_bin = clawteam_venv / "bin"
+
+if not clawteam_venv.exists():
+    subprocess.run([sys.executable, "-m", "venv", str(clawteam_venv)], check=True)
+
+subprocess.run([
+    str(clawteam_bin / "pip"), "install", "-e",
+    "git+https://github.com/HKUDS/ClawTeam.git#egg=clawteam"
+], check=True)
+
+# Create symlinks in /usr/local/bin
+for name in ["clawteam", "oh"]:
+    symlink = Path("/usr/local/bin") / name
+    if symlink.exists() or symlink.is_symlink():
+        symlink.unlink()
+    symlink.symlink_to(clawteam_bin / name)
+```
+
+**Key insight:** GitHub may have newer versions than PyPI. Always install from GitHub for critical tools.
+
+## first_time_setup.py Pattern
+
+For fully autonomous device migration, create a `first_time_setup.py` script that:
+
+1. **Detects** if Hermes is already installed
+2. **Runs restore** from snapshot
+3. **Auto-installs** external tools (ClawTeam, x-cli, etc.)
+4. **Sets up cron job** for auto-backup
+5. **Prints next steps**
+
+This script is the **single entry point** for new devices:
+
+```bash
+git clone https://github.com/owner/HERMES-AGENT.git
+cd HERMES-AGENT
+python3 scripts/first_time_setup.py
+# Device is immediately functional
+```
 
 Use an `auto_commit.sh` wrapper that:
 1. runs the sync script

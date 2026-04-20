@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-04-20T01:44:22.363277+00:00",
+  "timestamp_utc": "2026-04-20T01:46:08.685777+00:00",
   "hostname": "VM-5-136-ubuntu",
   "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.39",
   "python_version": "3.11.15 (main, Apr  7 2026, 20:48:58) [Clang 22.1.1 ]",
@@ -51,7 +51,7 @@
         "--short"
       ],
       "exit_code": 0,
-      "stdout": "M README.md\n M scripts/restore_hermes_snapshot.py\n?? scripts/first_time_setup.py\n?? setup_result.json",
+      "stdout": "M reports/snapshot_manifest.json\n M reports/summary.txt\n M reports/system_inventory.json\n M snapshot/hermes/channel_directory.json\n M snapshot/hermes/skills/autonomous-ai-agents/hermes-backup-repo/SKILL.md",
       "stderr": ""
     },
     "repo_git_remote": {
