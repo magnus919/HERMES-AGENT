@@ -292,9 +292,10 @@ approvals:
   timeout: 60
   cron_mode: deny
 command_allowlist:
+- script execution via -e/-c flag
+- script execution via heredoc
 - overwrite system file via tee
 - copy/move file into /etc/
-- script execution via -e/-c flag
 quick_commands: {}
 personalities: {}
 security:
@@ -352,6 +353,15 @@ custom_providers:
   models:
     MiniMax-M2.7-highspeed:
       context_length: 204800
+mcp_servers:
+  n8n:
+    url: https://azmiariffaris.app.n8n.cloud/mcp-server/http
+    headers:
+      Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhYTE0NDFlZC02YTQzLTRlMDUtYWM3YS0zNmU2NGRkZWQxYTQiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6ImUyOGY4YzU1LWFkMjAtNGIyNC1iN2E1LWE0MmE2ZWUwMzRmOSIsImlhdCI6MTc3NjY1MTE5OX0.lFU4U2o3ABX7KdjEh4AEQHgNHR_Gpwy3CnpbnOdbxgw
+    timeout: 180
+    connect_timeout: 60
+    sampling:
+      enabled: false
 
 # ── Fallback Model ────────────────────────────────────────────────────
 # Automatic provider failover when primary is unavailable.
@@ -374,14 +384,15 @@ custom_providers:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
 #
-mcp_servers:
-  n8n:
-    url: "https://azmiariffaris.app.n8n.cloud/mcp-server/http"
-    headers:
-      Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhYTE0NDFlZC02YTQzLTRlMDUtYWM3YS0zNmU2NGRkZWQxYTQiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6ImUyOGY4YzU1LWFkMjAtNGIyNC1iN2E1LWE0MmE2ZWUwMzRmOSIsImlhdCI6MTc3NjY1MTE5OX0.lFU4U2o3ABX7KdjEh4AEQHgNHR_Gpwy3CnpbnOdbxgw"
-    timeout: 180
-    connect_timeout: 60
-    sampling:
-      enabled: false
-
-
+# ── Smart Model Routing ────────────────────────────────────────────────
+# Optional cheap-vs-strong routing for simple turns.
+# Keeps the primary model for complex work, but can route short/simple
+# messages to a cheaper model across providers.
+#
+# smart_model_routing:
+#   enabled: true
+#   max_simple_chars: 160
+#   max_simple_words: 28
+#   cheap_model:
+#     provider: openrouter
+#     model: google/gemini-2.5-flash
