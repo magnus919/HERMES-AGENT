@@ -293,9 +293,12 @@ approvals:
   cron_mode: deny
 command_allowlist:
 - delete in root path
+- in-place edit of system config
+- shell command via -c/-lc flag
 - recursive delete
 - script execution via -e/-c flag
 - copy/move file into /etc/
+- stop/restart system service
 - script execution via heredoc
 - overwrite system file via tee
 quick_commands: {}
