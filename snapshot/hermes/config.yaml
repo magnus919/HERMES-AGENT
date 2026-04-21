@@ -301,6 +301,7 @@ command_allowlist:
 - stop/restart system service
 - script execution via heredoc
 - overwrite system file via tee
+- world/other-writable permissions
 quick_commands: {}
 personalities: {}
 security:
