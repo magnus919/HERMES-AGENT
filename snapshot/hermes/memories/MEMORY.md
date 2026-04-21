@@ -18,4 +18,4 @@ n8n MCP server connected ke https://azmiariffaris.app.n8n.cloud/mcp-server/http 
 §
 ClawTeam di system ini sekarang v0.3.0 (bukan v0.2.0). Diupdate dari GitHub karena GitHub ahead of PyPI. Skill sudah diupdate juga. Binary symlinked ke /usr/local/bin/{clawteam,oh} → /home/ubuntu/clawteam-venv/bin/
 §
-WhatsApp gateway vps at 43.157.205.89 running wa-gateway on port 3000 with Baileys v6. Session at /home/ubuntu/wa-gateway/session. PM2 auto-start configured. n8n cloud webhook: https://azmiariffaris.app.n8n.cloud/webhook/whatsapp-stok
+WAHA credentials: needs strong password (8+ chars, mix case/numbers/symbols). Uses env_file for credentials. WEBHOOK_URL via env. NOWEB engine for webhooks. VPS has wa-gateway on port 3000 (Baileys) and user runs own WAHA instances.
