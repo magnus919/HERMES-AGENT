@@ -17,17 +17,17 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 464
+        "completed": 473
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-21T05:21:23.667839+08:00",
-      "last_run_at": "2026-04-21T04:21:23.612730+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-04-21T09:51:45.786524+08:00",
+      "last_run_at": "2026-04-21T08:51:45.741987+08:00",
+      "last_status": "error",
+      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -128,17 +128,17 @@
       "schedule_display": "0 8 * * *",
       "repeat": {
         "times": null,
-        "completed": 10
+        "completed": 11
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:34.095791+07:00",
-      "next_run_at": "2026-04-21T08:00:00+08:00",
-      "last_run_at": "2026-04-20T08:00:04.088535+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-04-22T08:00:00+08:00",
+      "last_run_at": "2026-04-21T08:00:43.114908+08:00",
+      "last_status": "error",
+      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -149,5 +149,5 @@
       "last_delivery_error": null
     }
   ],
-  "updated_at": "2026-04-21T04:51:23.668041+08:00"
+  "updated_at": "2026-04-21T09:21:45.786704+08:00"
 }
