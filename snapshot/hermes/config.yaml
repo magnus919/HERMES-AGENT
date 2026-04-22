@@ -3,7 +3,7 @@ model:
   provider: custom
   context_length: 204800
   base_url: https://ai.sumopod.com/v1
-  api_key: sk-GCwzMYz4Eu4UDvoxZNVhGA
+  api_key: sk-FQ6qkRDawRi7nYuwazth4Q
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -70,6 +70,8 @@ terminal:
   cwd: .
   timeout: 180
   env_passthrough: []
+  shell_init_files: []
+  auto_source_bashrc: true
   docker_image: nikolaik/python-nodejs:python3.11-nodejs20
   docker_forward_env: []
   docker_env: {}
@@ -115,11 +117,6 @@ bedrock:
     guardrail_version: ''
     stream_processing_mode: async
     trace: disabled
-smart_model_routing:
-  enabled: false
-  max_simple_chars: 160
-  max_simple_words: 28
-  cheap_model: {}
 auxiliary:
   vision:
     provider: auto
@@ -127,6 +124,7 @@ auxiliary:
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
     download_timeout: 30
   web_extract:
     provider: auto
@@ -134,48 +132,57 @@ auxiliary:
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
   compression:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 120
+    extra_body: {}
   session_search:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
+    max_concurrency: 3
   skills_hub:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
   approval:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
   mcp:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
   flush_memories:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
   title_generation:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
+    extra_body: {}
 display:
   compact: false
   personality: kawaii
@@ -184,9 +191,13 @@ display:
   bell_on_complete: false
   show_reasoning: true
   streaming: true
+  final_response_markdown: strip
   inline_diffs: true
   show_cost: false
   skin: default
+  user_message_preview:
+    first_lines: 2
+    last_lines: 2
   interim_assistant_messages: true
   tool_progress_command: false
   tool_progress_overrides: {}
@@ -235,6 +246,7 @@ voice:
   record_key: ctrl+b
   max_recording_seconds: 120
   auto_tts: false
+  beep_enabled: true
   silence_threshold: 200
   silence_duration: 3
 human_delay:
@@ -258,6 +270,9 @@ delegation:
   api_key: ''
   max_iterations: 50
   reasoning_effort: ''
+  max_concurrent_children: 3
+  max_spawn_depth: 1
+  orchestrator_enabled: true
   default_toolsets:
   - terminal
   - file
@@ -265,6 +280,9 @@ delegation:
 prefill_messages_file: ''
 skills:
   external_dirs: []
+  template_vars: true
+  inline_shell: false
+  inline_shell_timeout: 10
   creation_nudge_interval: 15
   config:
     wiki:
@@ -303,6 +321,8 @@ command_allowlist:
 - overwrite system file via tee
 - world/other-writable permissions
 quick_commands: {}
+hooks: {}
+hooks_auto_accept: false
 personalities: {}
 security:
   redact_secrets: true
@@ -316,6 +336,7 @@ security:
     shared_files: []
 cron:
   wrap_response: true
+  max_parallel_jobs: null
 code_execution:
   mode: project
   timeout: 300
@@ -326,7 +347,12 @@ logging:
   backup_count: 3
 network:
   force_ipv4: false
-_config_version: 17
+_config_version: 19
+smart_model_routing:
+  enabled: false
+  max_simple_chars: 160
+  max_simple_words: 28
+  cheap_model: {}
 session_reset:
   mode: both
   idle_minutes: 1440
@@ -389,16 +415,3 @@ mcp_servers:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
-#
-# ── Smart Model Routing ────────────────────────────────────────────────
-# Optional cheap-vs-strong routing for simple turns.
-# Keeps the primary model for complex work, but can route short/simple
-# messages to a cheaper model across providers.
-#
-# smart_model_routing:
-#   enabled: true
-#   max_simple_chars: 160
-#   max_simple_words: 28
-#   cheap_model:
-#     provider: openrouter
-#     model: google/gemini-2.5-flash
