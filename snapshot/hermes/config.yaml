@@ -3,7 +3,7 @@ model:
   provider: custom
   context_length: 204800
   base_url: https://ai.sumopod.com/v1
-  api_key: sk-FQ6qkRDawRi7nYuwazth4Q
+  api_key: sk-H8trpJysYRqwxpwJO3frbA
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -15,13 +15,15 @@ credential_pool_strategies: {}
 toolsets:
 - hermes-cli
 agent:
-  max_turns: 100
+  max_turns: 90
   gateway_timeout: 1800
   restart_drain_timeout: 60
+  api_max_retries: 3
   service_tier: ''
   tool_use_enforcement: auto
   gateway_timeout_warning: 900
   gateway_notify_interval: 600
+  image_input_mode: auto
   verbose: false
   reasoning_effort: xhigh
   personalities:
@@ -91,13 +93,24 @@ browser:
   command_timeout: 30
   record_sessions: false
   allow_private_urls: false
+  auto_local_for_private_urls: true
   cdp_url: ''
+  dialog_policy: must_respond
+  dialog_timeout_s: 300
   camofox:
     managed_persistence: false
 checkpoints:
   enabled: true
   max_snapshots: 50
+  auto_prune: false
+  retention_days: 7
+  delete_orphans: true
+  min_interval_hours: 24
 file_read_max_chars: 100000
+tool_output:
+  max_bytes: 50000
+  max_lines: 2000
+  max_line_length: 2000
 compression:
   enabled: true
   threshold: 0.5
@@ -106,6 +119,8 @@ compression:
   summary_model: google/gemini-3-flash-preview
   summary_provider: auto
   summary_base_url: null
+prompt_caching:
+  cache_ttl: 5m
 bedrock:
   region: ''
   discovery:
@@ -169,14 +184,14 @@ auxiliary:
     api_key: ''
     timeout: 30
     extra_body: {}
-  flush_memories:
+  title_generation:
     provider: auto
     model: ''
     base_url: ''
     api_key: ''
     timeout: 30
     extra_body: {}
-  title_generation:
+  flush_memories:
     provider: auto
     model: ''
     base_url: ''
@@ -268,11 +283,14 @@ delegation:
   provider: ''
   base_url: ''
   api_key: ''
+  inherit_mcp_toolsets: true
   max_iterations: 50
+  child_timeout_seconds: 600
   reasoning_effort: ''
   max_concurrent_children: 3
   max_spawn_depth: 1
   orchestrator_enabled: true
+  subagent_auto_approve: false
   default_toolsets:
   - terminal
   - file
@@ -283,6 +301,7 @@ skills:
   template_vars: true
   inline_shell: false
   inline_shell_timeout: 10
+  guard_agent_created: false
   creation_nudge_interval: 15
   config:
     wiki:
@@ -325,6 +344,7 @@ hooks: {}
 hooks_auto_accept: false
 personalities: {}
 security:
+  allow_private_urls: false
   redact_secrets: true
   tirith_enabled: true
   tirith_path: tirith
@@ -345,9 +365,24 @@ logging:
   level: INFO
   max_size_mb: 5
   backup_count: 3
+model_catalog:
+  enabled: true
+  url: https://hermes-agent.nousresearch.com/docs/api/model-catalog.json
+  ttl_hours: 24
+  providers: {}
 network:
   force_ipv4: false
-_config_version: 19
+sessions:
+  auto_prune: false
+  retention_days: 90
+  vacuum_after_prune: true
+  min_interval_hours: 24
+onboarding:
+  seen: {}
+updates:
+  pre_update_backup: false
+  backup_keep: 5
+_config_version: 22
 smart_model_routing:
   enabled: false
   max_simple_chars: 160
@@ -394,6 +429,8 @@ mcp_servers:
     connect_timeout: 60
     sampling:
       enabled: false
+plugins:
+  enabled: []
 
 # ── Fallback Model ────────────────────────────────────────────────────
 # Automatic provider failover when primary is unavailable.
