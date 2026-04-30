@@ -83,7 +83,7 @@ The template files in `templates/` are safe starting points for schedule creatio
 
 ```bash
 repliz-api account list --page 1 --limit 1
-repliz-api threads posts ACCOUNT_ID --limit 1
+repliz-api account get ACCOUNT_ID
 ```
 
 A valid configuration should return JSON from the API instead of an auth error.
@@ -94,3 +94,4 @@ A valid configuration should return JSON from the API instead of an auth error.
 - The API uses HTTP Basic Auth, not bearer tokens.
 - Repliz public Swagger currently documents account/schedule/queue only; the `threads` wrapper commands are a convenience layer that reuses the Threads access token from the connected Repliz account to call the Threads Graph API directly.
 - `schedule create` requires a full JSON payload matching the documented schema.
+- **Threads & TikTok Limitation**: Repliz does not support Instagram or Threads accounts for TikTok accounts. `repliz-api threads profile` and `repliz-api threads posts` will return `400: account_not_threads` for any non-Threads account. See `references/repliz-threads-tiktok-limitations.md` for details.

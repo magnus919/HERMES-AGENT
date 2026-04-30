@@ -2,14 +2,26 @@
   "repliz-api": {
     "archived_at": null,
     "created_at": "2026-04-30T07:25:03.141498+00:00",
-    "last_patched_at": null,
+    "last_patched_at": "2026-04-30T07:31:50.975100+00:00",
     "last_used_at": null,
     "last_viewed_at": "2026-04-30T07:25:03.141520+00:00",
-    "patch_count": 0,
+    "patch_count": 2,
     "pinned": false,
     "state": "active",
     "use_count": 0,
     "view_count": 1
+  },
+  "research-ai-agent-self-improvement": {
+    "archived_at": null,
+    "created_at": "2026-04-30T08:06:08.437785+00:00",
+    "last_patched_at": "2026-04-30T08:15:33.959959+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 5,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
   },
   "xitter": {
     "archived_at": null,

@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 679
+        "completed": 680
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-30T16:00:38.849651+08:00",
-      "last_run_at": "2026-04-30T15:00:38.748136+08:00",
+      "next_run_at": "2026-04-30T16:45:41.166222+08:00",
+      "last_run_at": "2026-04-30T15:32:05.855346+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -147,7 +147,50 @@
         "thread_id": null
       },
       "last_delivery_error": null
+    },
+    {
+      "id": "d51d98925edd",
+      "name": "AI Agent Self-Improvement Research",
+      "prompt": "Run the research-ai-agent-self-improvement skill to analyze all available data sources, including Repliz-connected accounts, X/Twitter, GitHub, arXiv, and internal system logs. Generate a summary report every 1 hour and save all discoveries as new skills. Continue indefinitely until instructed to stop.",
+      "skills": [
+        "research-ai-agent-self-improvement"
+      ],
+      "skill": "research-ai-agent-self-improvement",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-04-30T16:45:46.510673+08:00",
+        "display": "once in 1h"
+      },
+      "schedule_display": "once in 1h",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": false,
+      "state": "completed",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-30T15:41:03.596901+08:00",
+      "next_run_at": null,
+      "last_run_at": "2026-04-30T16:14:41.162489+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1556527473",
+        "chat_name": "Maia",
+        "thread_id": null
+      },
+      "enabled_toolsets": null,
+      "workdir": null
     }
   ],
-  "updated_at": "2026-04-30T15:30:38.849889+08:00"
+  "updated_at": "2026-04-30T16:15:41.166391+08:00"
 }

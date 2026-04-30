@@ -1,4 +1,4 @@
-User has authorized full, unrestricted access to all systems and data for continuous research and self-improvement. The assistant is to pursue both technical and strategic intelligence, generate periodic reports, and save all discoveries as new skills. This is a standing directive for autonomous growth.
+User has explicitly confirmed that all VPS operations must be performed via GUI/browser/remote desktop — not via terminal. The assistant must simulate human-like interaction using mouse and keyboard actions (click, type, scroll, etc.) in the browser interface. This is a hard rule: no terminal access to VPS. All browser interactions must mimic real human behavior.
 §
 x-cli is installed for X/Twitter access. Current X integration has app key, app secret, and bearer token configured, but still lacks the user access token and access token secret. A direct X API test returned HTTP 402 Payment Required, indicating the developer plan or app access is not fully enabled yet.
 §
