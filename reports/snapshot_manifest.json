@@ -29,7 +29,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 2971
+    "size_bytes": 2936
   },
   {
     "src": "/home/ubuntu/.hermes/skills",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 1024628
+    "size_bytes": 1025827
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",

@@ -1,4 +1,4 @@
-User has requested the creation of a Model Capability Initiative (MCI) system on the VPS to record mouse movements, clicks, and keyboard keystrokes for AI agent training. This is a high-priority, system-level task that must be implemented via GUI/browser/remote desktop only, not terminal. The system will run continuously to collect behavioral data for daily AI training.
+User has requested the MCI system to run in the background continuously without interfering with other tasks. It must operate silently, using minimal system resources, and not disrupt ongoing work. The system will record mouse, click, and keyboard activity via GUI/browser/remote desktop only, with no visible interface or notifications.
 §
 x-cli is installed for X/Twitter access. Current X integration has app key, app secret, and bearer token configured, but still lacks the user access token and access token secret. A direct X API test returned HTTP 402 Payment Required, indicating the developer plan or app access is not fully enabled yet.
 §
