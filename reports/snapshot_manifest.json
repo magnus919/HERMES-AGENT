@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 17603280
+    "size_bytes": 17603378
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 1029424
+    "size_bytes": 1030623
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
