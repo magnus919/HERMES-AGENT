@@ -192,11 +192,14 @@ Recommended defaults:
 
 ## Pitfalls
 
-- **Paid API access**: many failures are plan/permission problems, not code problems.
+- **Paid API access**: many failures are plan/permission problems, not code problems. A `402 Payment Required` error indicates the X developer account has no available API credits.
 - **403 oauth1-permissions**: regenerate the access token after enabling `Read and write`.
 - **Reply restrictions**: X restricts many programmatic replies. `tweet quote` is often more reliable than `tweet reply`.
 - **Rate limits**: expect per-endpoint limits and cooldown windows.
 - **Credential drift**: if you rotate tokens in `~/.hermes/.env`, make sure `~/.config/x-cli/.env` still points at the current file.
+- **Missing X_ACCESS_TOKEN and X_ACCESS_TOKEN_SECRET**: This is the most common cause of login failure. These user-level credentials are required for write actions (posting, replying, liking). The `x-cli` tool will fail with "Missing env var: X_ACCESS_TOKEN" even if all other credentials are present.
+- **Token expiration**: Access tokens can expire after 90 days. Always check the validity of your tokens when encountering auth errors.
+- **Bearer token vs. access token**: `X_BEARER_TOKEN` is for app-level read access. `X_ACCESS_TOKEN` and `X_ACCESS_TOKEN_SECRET` are for user-level actions. Both are required for full functionality.
 
 ## Notes
 

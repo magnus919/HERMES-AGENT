@@ -1,9 +1,9 @@
 model:
-  default: MiniMax-M2.7-highspeed
+  default: qwen/qwen3-30b-a3b-instruct-2507
   provider: custom
   context_length: 204800
   base_url: https://ai.sumopod.com/v1
-  api_key: sk-H8trpJysYRqwxpwJO3frbA
+  api_key: sk-V-8O0tXrsfnNgdTA4pjRzw
 providers:
   ai.sumopod.com:
     api: https://ai.sumopod.com/v1
@@ -435,7 +435,14 @@ platform_toolsets:
   - hermes-homeassistant
 TELEGRAM_HOME_CHANNEL: '1556527473'
 WHATSAPP_HOME_CHANNEL: 155898873929940@lid
-custom_providers: []
+custom_providers:
+- name: Ai.sumopod.com
+  base_url: https://ai.sumopod.com/v1
+  api_key: sk-V-8O0tXrsfnNgdTA4pjRzw
+  model: qwen/qwen3-30b-a3b-instruct-2507
+  models:
+    qwen/qwen3-30b-a3b-instruct-2507:
+      context_length: 262144
 mcp_servers:
   n8n:
     url: https://azmiariffaris.app.n8n.cloud/mcp-server/http
