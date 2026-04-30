@@ -1,4 +1,16 @@
 {
+  "id-social-media-scan": {
+    "archived_at": null,
+    "created_at": "2026-04-30T15:05:40.861014+00:00",
+    "last_patched_at": "2026-04-30T15:23:30.513416+00:00",
+    "last_used_at": null,
+    "last_viewed_at": "2026-04-30T15:11:00.522261+00:00",
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 2
+  },
   "repliz-api": {
     "archived_at": null,
     "created_at": "2026-04-30T07:25:03.141498+00:00",

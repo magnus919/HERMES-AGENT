@@ -18,6 +18,19 @@ Fast read-only scan for AI agent content on Indonesian social platforms.
 
 **Work-around:** Yahoo search (search.yahoo.com) successfully returns results. Also: Indonesian tech blogs (help.apiyi.com, qqlink.com) index Hermes Agent content in Indonesian.
 
+## Updated Approach (2026-04-30)
+- **Yahoo search is unreliable**: repeated attempts via `curl` and `browser_navigate` failed due to connection timeouts and daemon errors, even with a strong User-Agent.
+- **Direct domain access is blocked**: All target domains (help.apiyi.com, qqlink.com, threads.net, instagram.com, x.com) return timeouts or connection errors when accessed via agent-browser.
+- **Fallback strategy**: No working public entry point found. The scan cannot be completed as intended. Future attempts should skip Yahoo and focus on known-working sources or accept that public Indonesian social media scanning is currently impossible from this environment.
+
+## Known Limitations (Updated)
+- Cloud VM IPs are blocked or rate-limited by all major platforms.
+- No public API or anonymous access to Threads, Instagram, or X.com in Indonesia.
+- Indonesian tech blogs are unreachable via automated tools.
+- All access attempts fail with connection timeouts or daemon errors, indicating infrastructure-level blocking.
+- Unindexed content (private accounts, non-public posts) is invisible.
+- The scan cannot be completed under current constraints.
+
 ## Approach
 
 ### Step 1: Yahoo search (working entry point)
