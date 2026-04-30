@@ -23,6 +23,7 @@ agent:
   tool_use_enforcement: auto
   gateway_timeout_warning: 900
   gateway_notify_interval: 600
+  gateway_auto_continue_freshness: 3600
   image_input_mode: auto
   verbose: false
   reasoning_effort: xhigh
@@ -80,12 +81,14 @@ terminal:
   singularity_image: docker://nikolaik/python-nodejs:python3.11-nodejs20
   modal_image: nikolaik/python-nodejs:python3.11-nodejs20
   daytona_image: nikolaik/python-nodejs:python3.11-nodejs20
+  vercel_runtime: node24
   container_cpu: 1
   container_memory: 5120
   container_disk: 51200
   container_persistent: true
   docker_volumes: []
   docker_mount_cwd_to_workspace: false
+  docker_run_as_host_user: false
   persistent_shell: true
   lifetime_seconds: 300
 browser:
@@ -116,6 +119,7 @@ compression:
   threshold: 0.5
   target_ratio: 0.2
   protect_last_n: 20
+  hygiene_hard_message_limit: 400
   summary_model: google/gemini-3-flash-preview
   summary_provider: auto
   summary_base_url: null
@@ -203,6 +207,7 @@ display:
   personality: kawaii
   resume_display: full
   busy_input_mode: interrupt
+  tui_auto_resume_recent: false
   bell_on_complete: false
   show_reasoning: true
   streaming: true
@@ -210,6 +215,7 @@ display:
   inline_diffs: true
   show_cost: false
   skin: default
+  tui_status_indicator: kaomoji
   user_message_preview:
     first_lines: 2
     last_lines: 2
@@ -218,6 +224,12 @@ display:
   tool_progress_overrides: {}
   tool_preview_length: 0
   platforms: {}
+  runtime_footer:
+    enabled: false
+    fields:
+    - model
+    - context_pct
+    - cwd
   tool_progress: all
   background_process_notifications: all
 dashboard:
@@ -307,6 +319,15 @@ skills:
     wiki:
       path: ~/wiki
   disabled: []
+curator:
+  enabled: true
+  interval_hours: 168
+  min_idle_hours: 2
+  stale_after_days: 30
+  archive_after_days: 90
+  auxiliary:
+    provider: null
+    model: null
 honcho: {}
 timezone: ''
 discord:
@@ -319,6 +340,7 @@ discord:
   server_actions: ''
 whatsapp: {}
 telegram:
+  reactions: false
   channel_prompts: {}
 slack:
   channel_prompts: {}
@@ -328,6 +350,7 @@ approvals:
   mode: manual
   timeout: 60
   cron_mode: deny
+  mcp_reload_confirm: true
 command_allowlist:
 - delete in root path
 - in-place edit of system config
@@ -412,14 +435,7 @@ platform_toolsets:
   - hermes-homeassistant
 TELEGRAM_HOME_CHANNEL: '1556527473'
 WHATSAPP_HOME_CHANNEL: 155898873929940@lid
-custom_providers:
-- name: Ai.sumopod.com
-  base_url: https://ai.sumopod.com/v1
-  api_key: sk-P213yjaGc_cXcrsEIMgI_g
-  model: MiniMax-M2.7-highspeed
-  models:
-    MiniMax-M2.7-highspeed:
-      context_length: 204800
+custom_providers: []
 mcp_servers:
   n8n:
     url: https://azmiariffaris.app.n8n.cloud/mcp-server/http

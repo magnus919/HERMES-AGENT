@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-28T16:24:27.150917",
+  "updated_at": "2026-04-30T14:59:19.961927",
   "platforms": {
     "telegram": [
       {
@@ -32,6 +32,7 @@
     "weixin": [],
     "bluebubbles": [],
     "qqbot": [],
-    "yuanbao": []
+    "yuanbao": [],
+    "irc": []
   }
 }

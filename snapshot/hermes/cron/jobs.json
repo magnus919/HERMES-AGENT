@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 585
+        "completed": 678
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-04-28T16:55:27.153500+08:00",
-      "last_run_at": "2026-04-23T16:58:26.163220+08:00",
+      "next_run_at": "2026-04-30T15:30:20.074460+08:00",
+      "last_run_at": "2026-04-30T14:29:22.906410+08:00",
       "last_status": "error",
       "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "local",
@@ -54,15 +54,15 @@
       "schedule_display": "5 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 14
+        "completed": 16
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
-      "next_run_at": "2026-04-28T23:05:00+08:00",
-      "last_run_at": "2026-04-22T23:05:04.973259+08:00",
+      "next_run_at": "2026-04-30T23:05:00+08:00",
+      "last_run_at": "2026-04-29T23:05:09.352206+08:00",
       "last_status": "error",
       "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "local",
@@ -91,15 +91,15 @@
       "schedule_display": "20 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 13
+        "completed": 15
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:09.532058+07:00",
-      "next_run_at": "2026-04-28T23:20:00+08:00",
-      "last_run_at": "2026-04-22T23:20:06.482900+08:00",
+      "next_run_at": "2026-04-30T23:20:00+08:00",
+      "last_run_at": "2026-04-29T23:20:11.320447+08:00",
       "last_status": "error",
       "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "local",
@@ -128,15 +128,15 @@
       "schedule_display": "0 8 * * *",
       "repeat": {
         "times": null,
-        "completed": 13
+        "completed": 15
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:34.095791+07:00",
-      "next_run_at": "2026-04-29T08:00:00+08:00",
-      "last_run_at": "2026-04-23T08:00:42.905717+08:00",
+      "next_run_at": "2026-05-01T08:00:00+08:00",
+      "last_run_at": "2026-04-30T08:00:53.279440+08:00",
       "last_status": "error",
       "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "origin",
@@ -149,5 +149,5 @@
       "last_delivery_error": null
     }
   ],
-  "updated_at": "2026-04-28T16:25:27.153694+08:00"
+  "updated_at": "2026-04-30T15:00:20.075512+08:00"
 }
