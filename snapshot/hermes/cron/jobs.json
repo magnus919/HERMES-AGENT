@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 716
+        "completed": 717
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-05-01T10:58:44.661946+08:00",
-      "last_run_at": "2026-05-01T09:58:44.585878+08:00",
+      "next_run_at": "2026-05-01T11:28:53.025117+08:00",
+      "last_run_at": "2026-05-01T10:28:52.956954+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -242,5 +242,5 @@
       "workdir": "/home/hermes/cron/daily-research"
     }
   ],
-  "updated_at": "2026-05-01T10:28:44.662206+08:00"
+  "updated_at": "2026-05-01T10:58:53.025300+08:00"
 }
