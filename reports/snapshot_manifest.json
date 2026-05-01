@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 1110776
+    "size_bytes": 1111975
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
