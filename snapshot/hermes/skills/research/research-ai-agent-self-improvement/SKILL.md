@@ -32,8 +32,8 @@ To continuously enhance the agent's intelligence, capabilities, and efficiency t
 1. **Initial Data Collection**
    - Run `repliz-api account list --page 1 --limit 3` to verify connected accounts.
    - Run `x-cli user get @username` to test X/Twitter access.
-   - Run `search_files(pattern="*.py", target="content")` to scan codebase.
-   - Run `arxiv search "LLM self-improvement"` to find latest papers.
+   - Run `find . -type f -name "*.py"` to scan codebase.
+   - Run `curl -s "https://export.arxiv.org/api/query?search_query=all:LLM+self-improvement&max_results=5"` to find latest papers.
 
 2. **Analysis & Synthesis**
    - Use `delegate_task` to analyze findings.
