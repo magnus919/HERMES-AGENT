@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 711
+        "completed": 712
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-05-01T08:27:21.100300+08:00",
-      "last_run_at": "2026-05-01T07:27:21.029672+08:00",
+      "next_run_at": "2026-05-01T08:58:05.899318+08:00",
+      "last_run_at": "2026-05-01T07:57:28.405003+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -54,7 +54,7 @@
       "schedule_display": "5 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 17
+        "completed": 18
       },
       "enabled": true,
       "state": "scheduled",
@@ -62,7 +62,7 @@
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
       "next_run_at": "2026-05-01T23:05:00+08:00",
-      "last_run_at": "2026-04-30T23:23:21.291518+08:00",
+      "last_run_at": "2026-05-01T08:11:05.855771+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -91,7 +91,7 @@
       "schedule_display": "20 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 16
+        "completed": 17
       },
       "enabled": true,
       "state": "scheduled",
@@ -99,9 +99,9 @@
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:09.532058+07:00",
       "next_run_at": "2026-05-01T23:20:00+08:00",
-      "last_run_at": "2026-04-30T23:26:57.160218+08:00",
-      "last_status": "error",
-      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
+      "last_run_at": "2026-05-01T08:07:35.522831+08:00",
+      "last_status": "ok",
+      "last_error": null,
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -128,17 +128,17 @@
       "schedule_display": "0 8 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 16
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:34.095791+07:00",
-      "next_run_at": "2026-05-01T08:00:00+08:00",
-      "last_run_at": "2026-04-30T08:00:53.279440+08:00",
-      "last_status": "error",
-      "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
+      "next_run_at": "2026-05-02T08:00:00+08:00",
+      "last_run_at": "2026-05-01T08:06:01.507104+08:00",
+      "last_status": "ok",
+      "last_error": null,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -190,7 +190,57 @@
       },
       "enabled_toolsets": null,
       "workdir": null
+    },
+    {
+      "id": "494077af125e",
+      "name": "Daily Indonesian AI Agent Research Scan",
+      "prompt": "Every day at 23:20 WIB (Asia/Jakarta), perform a fast, read-only Indonesian web research scan.\n\nPriority order must follow the user's instruction exactly:\n1) AI agents / autonomous agents / agent workflows / tool-using assistants\n2) Hermes / Hermes Agent / workflows or tools that Hermes can learn from directly\n3) Broader AI developments only if they materially affect AI agents or Hermes\n\nSource priorities:\n- Official product/company blogs and announcements\n- GitHub repos, release notes, commits, and changelogs\n- arXiv or reputable research summaries\n- Reputable reporting only when primary sources are not enough\n\nGoal:\n- Extract recent, verifiable developments.\n- Preserve wording as closely as possible to the official source.\n- Do not turn release notes, commits, or announcements into a broader market narrative unless the source clearly supports it.\n\nHard constraints:\n- Finish within 5 minutes.\n- Use at most 4 source items total.\n- Prioritize recency and credibility over quantity.\n- Do not fabricate findings, dates, scope, or source details.\n- Do not use evaluative framing such as \u201ctren besar\u201d, \u201cjelas menunjukkan\u201d, \u201cmakin\u201d, \u201cyang paling penting\u201d, or similar unless supported by the source.\n- If wording matters, quote a short exact phrase from the source.\n- If you add interpretation, label it clearly as interpretation, not source fact.\n\nRequired output in Indonesian:\n1) Temuan terverifikasi, ordered by the priority above\n   For each item include:\n   - Sumber\n   - Fakta terverifikasi (1-3 bullets, minimal paraphrase, neutral wording)\n   - Pelajaran untuk Hermes (optional, clearly labeled as interpretation)\n2) Mengapa ini relevan untuk Hermes (very short, only if supported by the verified facts)\n3) Sumber\n4) Apa yang belum bisa diverifikasi\n\nBehavior:\n- Be precise, neutral, and honest.\n- Better to report fewer items faithfully than more items with added spin.",
+      "skills": [
+        "research-ai-agent-self-improvement",
+        "id-social-media-scan",
+        "arxiv",
+        "github-code-review"
+      ],
+      "skill": "research-ai-agent-self-improvement",
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "provider": "custom",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "display": "0 23 * * *"
+      },
+      "schedule_display": "0 23 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-01T08:07:21.423144+08:00",
+      "next_run_at": "2026-05-01T23:00:00+08:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1556527473",
+        "chat_name": "Maia",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "web",
+        "search",
+        "skills"
+      ],
+      "workdir": "/home/hermes/cron/daily-research"
     }
   ],
-  "updated_at": "2026-05-01T07:57:21.100475+08:00"
+  "updated_at": "2026-05-01T08:28:05.899500+08:00"
 }
