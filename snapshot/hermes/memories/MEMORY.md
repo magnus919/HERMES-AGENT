@@ -14,4 +14,4 @@ ClawTeam di system ini sekarang v0.3.0 (bukan v0.2.0). Diupdate dari GitHub kare
 §
 WAHA credentials: needs strong password (8+ chars, mix case/numbers/symbols). Uses env_file for credentials. WEBHOOK_URL via env. NOWEB engine for webhooks. VPS has wa-gateway on port 3000 (Baileys) and user runs own WAHA instances.
 §
-VPS GUI via RDP: 43.157.205.89:3389, user ubuntu, pass wx5-5Lw-2bV-MFu, XFCE, ufw inactive. ATURAN: Semua operasi VPS harus via GUI/browser/remote desktop — tidak lewat terminal. Seperti manusia pegang laptop beneran dengan mouse + keyboard.
+VPS GUI via RDP: 43.157.205.89:3389, user ubuntu, pass wx5-5Lw-2bV-MFu, XFCE, ufw inactive. ATURAN: Semua operasi VPS harus via GUI/browser/remote desktop — tidak lewat terminal. Seperti manusia pegang laptop beneran dengan mouse + keyboard. Akses ini sudah diverifikasi dan diaktifkan via noVNC di port 6080.
