@@ -1,15 +1,39 @@
 {
-  "id-social-media-scan": {
+  "clawhub-skill-install": {
     "archived_at": null,
-    "created_at": "2026-04-30T15:05:40.861014+00:00",
-    "last_patched_at": "2026-05-02T15:00:12.940645+00:00",
+    "created_at": "2026-05-02T15:21:23.211313+00:00",
+    "last_patched_at": null,
     "last_used_at": null,
-    "last_viewed_at": "2026-05-02T15:00:03.125504+00:00",
-    "patch_count": 8,
+    "last_viewed_at": "2026-05-02T15:21:23.211331+00:00",
+    "patch_count": 0,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 7
+    "view_count": 1
+  },
+  "clawteam": {
+    "archived_at": null,
+    "created_at": "2026-05-02T15:21:21.160667+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-02T15:21:21.160686+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 1
+  },
+  "id-social-media-scan": {
+    "archived_at": null,
+    "created_at": "2026-04-30T15:05:40.861014+00:00",
+    "last_patched_at": "2026-05-02T15:21:09.251128+00:00",
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-02T15:20:57.252449+00:00",
+    "patch_count": 10,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 9
   },
   "repliz-api": {
     "archived_at": null,

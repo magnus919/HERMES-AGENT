@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 789
+        "completed": 790
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-05-02T23:47:04.168584+08:00",
-      "last_run_at": "2026-05-02T22:46:00.279563+08:00",
+      "next_run_at": "2026-05-03T00:18:07.613893+08:00",
+      "last_run_at": "2026-05-02T23:17:14.777513+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -54,7 +54,7 @@
       "schedule_display": "5 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 20
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
@@ -62,7 +62,7 @@
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
       "next_run_at": "2026-05-03T23:05:00+08:00",
-      "last_run_at": "2026-05-02T08:04:59.029239+08:00",
+      "last_run_at": "2026-05-02T23:17:37.344278+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -91,15 +91,15 @@
       "schedule_display": "20 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 20
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:09.532058+07:00",
-      "next_run_at": "2026-05-02T23:20:00+08:00",
-      "last_run_at": "2026-05-02T08:07:18.064621+08:00",
+      "next_run_at": "2026-05-03T23:20:00+08:00",
+      "last_run_at": "2026-05-02T23:22:07.543489+08:00",
       "last_status": "error",
       "last_error": "Agent completed but produced empty response (model error, timeout, or misconfiguration)",
       "deliver": "local",
@@ -337,5 +337,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-05-02T23:17:04.171424+08:00"
+  "updated_at": "2026-05-02T23:48:07.614093+08:00"
 }
