@@ -26,14 +26,14 @@
   "id-social-media-scan": {
     "archived_at": null,
     "created_at": "2026-04-30T15:05:40.861014+00:00",
-    "last_patched_at": "2026-05-02T15:21:09.251128+00:00",
+    "last_patched_at": "2026-05-03T15:00:48.517569+00:00",
     "last_used_at": null,
-    "last_viewed_at": "2026-05-02T15:20:57.252449+00:00",
-    "patch_count": 10,
+    "last_viewed_at": "2026-05-03T15:00:16.110491+00:00",
+    "patch_count": 11,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 9
+    "view_count": 10
   },
   "repliz-api": {
     "archived_at": null,
@@ -52,12 +52,12 @@
     "created_at": "2026-04-30T08:06:08.437785+00:00",
     "last_patched_at": "2026-05-02T15:04:28.586289+00:00",
     "last_used_at": null,
-    "last_viewed_at": "2026-05-02T15:00:03.139870+00:00",
+    "last_viewed_at": "2026-05-03T15:00:16.096683+00:00",
     "patch_count": 10,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 3
+    "view_count": 4
   },
   "xitter": {
     "archived_at": null,

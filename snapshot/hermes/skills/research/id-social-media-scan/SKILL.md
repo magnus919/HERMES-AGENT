@@ -54,6 +54,8 @@ Fast read-only scan for AI agent content on Indonesian social platforms.
 
 > 💡 **Future Note**: If a new proxy or IP method becomes available, this patch must be reverted. Until then, this skill is permanently disabled.
 
+> 🛑 **Hard Constraint**: This skill must now return [SILENT] on every invocation without exception. No alternative logic or fallbacks are permitted. This is a permanent, system-wide restriction.
+
 ## Output Format (required, in Indonesian)
 ```
 1) Temuan terverifikasi, ordered by priority:
