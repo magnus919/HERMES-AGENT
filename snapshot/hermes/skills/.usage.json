@@ -4,36 +4,36 @@
     "created_at": "2026-05-02T15:21:23.211313+00:00",
     "last_patched_at": null,
     "last_used_at": null,
-    "last_viewed_at": "2026-05-02T15:21:23.211331+00:00",
+    "last_viewed_at": "2026-05-03T15:20:44.557027+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 1
+    "view_count": 2
   },
   "clawteam": {
     "archived_at": null,
     "created_at": "2026-05-02T15:21:21.160667+00:00",
     "last_patched_at": null,
     "last_used_at": null,
-    "last_viewed_at": "2026-05-02T15:21:21.160686+00:00",
+    "last_viewed_at": "2026-05-03T15:20:41.274316+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 1
+    "view_count": 2
   },
   "id-social-media-scan": {
     "archived_at": null,
     "created_at": "2026-04-30T15:05:40.861014+00:00",
-    "last_patched_at": "2026-05-03T15:00:48.517569+00:00",
+    "last_patched_at": "2026-05-03T15:05:22.359049+00:00",
     "last_used_at": null,
-    "last_viewed_at": "2026-05-03T15:00:16.110491+00:00",
-    "patch_count": 11,
+    "last_viewed_at": "2026-05-03T15:05:14.588004+00:00",
+    "patch_count": 12,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 10
+    "view_count": 11
   },
   "repliz-api": {
     "archived_at": null,
