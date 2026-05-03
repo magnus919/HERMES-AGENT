@@ -1,53 +1,92 @@
 # Context Budget Discipline
 
-Practical rules for keeping orchestrator context lean when spawning subagents or reading large artifacts. Use these whenever you're running a multi-step agent loop that will consume significant context — plan execution, subagent orchestration, review pipelines, multi-file refactors.
+Four-tier model for managing context window degradation during long, multi-step workflows. The model defines when to act, how to act, and what to preserve — critical for orchestrating complex agent runs.
 
-Adapted from the GSD (Get Shit Done) project's context-budget reference — MIT © 2025 Lex Christopherson ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)).
+Adapted from the GSD (Get Shit Done) project's context discipline reference — MIT © 2025 Lex Christopherson ([gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)).
 
-## Universal rules
+## The four tiers
 
-Every workflow that spawns agents or reads significant content must follow these:
+### Tier 1: PEAK (0–30% context used)
 
-1. **Never read agent definition files.** `delegate_task` auto-loads them — you reading them too just doubles the cost.
-2. **Never inline large files into subagent prompts.** Tell the agent to read the file from disk with `read_file` instead. The subagent gets full content; your context stays lean.
-3. **Read depth scales with context window.** See the table below.
-4. **Delegate heavy work to subagents.** The orchestrator routes; it doesn't execute.
-5. **Proactively warn** the user when you've consumed significant context ("Context is getting heavy — consider checkpointing progress before we continue").
+**Behavior:** No action needed. Context is abundant. Use full depth.
 
-## Read depth by context window
+**Rules:**
+- Read depth: full context window
+- No pruning
+- No summaries
+- No abstractions
 
-Check the model's actual context window (not "it's Claude so 200K"). Some Sonnet deployments are 1M, some are 200K. If you don't know, assume the smaller one — err toward leanness.
+### Tier 2: GOOD (31–50% context used)
 
-| Context window | Subagent output reading | Summary files | Verification files | Plans for other phases |
-|----------------|-------------------------|---------------|--------------------|-----------------------|
-| < 500k (e.g. 200k) | Frontmatter only | Frontmatter only | Frontmatter only | Current phase only |
-| >= 500k (1M models) | Full body permitted | Full body permitted | Full body permitted | Current phase only |
+**Behavior:** Begin light pruning. Preserve core structure.
 
-"Frontmatter only" means: read enough to see the final status/verdict/conclusion. If the subagent wrote a 3000-line debug log, read the summary section it produced, not the log.
+**Rules:**
+- Read depth: full context window
+- Prune only non-essential artifacts (e.g., verbose logs, duplicate output)
+- Preserve full task text, plan structure, and code
+- No summaries
 
-## Four-tier degradation model
+### Tier 3: DEGRADING (51–70% context used)
 
-Monitor your context usage and shift behavior as you climb the tiers. The point is to notice *before* you hit the wall, not when responses start truncating.
+**Behavior:** Actively manage context. Prune aggressively.
 
-| Tier | Usage | Behavior |
-|------|-------|----------|
-| **PEAK** | 0 – 30% | Full operations. Read bodies, spawn multiple agents in parallel, inline results freely. |
-| **GOOD** | 30 – 50% | Normal operations. Prefer frontmatter reads. Delegate aggressively. |
-| **DEGRADING** | 50 – 70% | Economize. Frontmatter-only reads, minimal inlining, **warn the user** about budget. |
-| **POOR** | 70%+ | Emergency mode. **Checkpoint progress immediately.** No new reads unless critical. Finish the current task and stop cleanly. |
+**Rules:**
+- Read depth: 50% of context window
+- Prune: remove redundant or low-signal artifacts (e.g., repeated debug prints, long error traces)
+- Summarize: generate one-sentence summaries for each task or file
+- Preserve: task list, file paths, and critical code
+- Use `context-budget-discipline.md` reference to guide pruning
 
-## Early warning signs (before panic thresholds fire)
+### Tier 4: POOR (>70% context used)
 
-Quality degrades *gradually* before hard limits hit. Watch for these:
+**Behavior:** Emergency mode. Stop and checkpoint.
 
-- **Silent partial completion.** Subagent claims done but implementation is incomplete. Self-checks catch file existence, not semantic completeness. Always verify subagent output against the plan's must-haves, not just "did a file appear?"
-- **Increasing vagueness.** Agent starts using phrases like "appropriate handling" or "standard patterns" instead of specific code. This is context pressure showing up before budget warnings fire.
-- **Skipped protocol steps.** Agent omits steps it would normally follow. If success criteria has 8 items and the report covers 5, suspect context pressure, not "the agent decided 5 was enough."
+**Rules:**
+- Read depth: 25% of context window
+- Prune: remove all non-essential content — keep only task list, file paths, and minimal code
+- Summarize: generate a full summary of all completed tasks and state
+- **Abort:** If any action is required that would exceed the window, stop immediately, checkpoint current state, and report the reason
 
-When these signs appear, checkpoint the work and either reset context or hand off to a fresh subagent.
+## How to use this in a skill
 
-## Fundamental limitation
+When you design a workflow that spans multiple subagent invocations, long review loops, or complex artifact generation, **monitor context usage** and **act at the appropriate tier**.
 
-When you orchestrate, you cannot verify semantic correctness of subagent output — only structural completeness ("did the file appear?", "does the test pass?"). Semantic verification requires either running the code yourself or delegating a review pass to another fresh subagent.
+Use the `references/context-budget-discipline.md` file to guide pruning and summarization decisions. Load it when the run will consume significant context (e.g., >5 tasks, 10+ file changes, long test runs).
 
-**Mitigation:** in every task you delegate, include explicit "must-have" truths the subagent must confirm in its response (e.g., "confirm your test actually tests X, not just that X was imported"). The subagent re-asserting concrete facts is evidence; vague summaries are not.
+## Example — a long orchestration with context management
+
+```
+[Start] Read plan: 20 tasks
+[PEAK] Tier 1: Read full plan, extract tasks
+
+[Task 1] Dispatch implementer
+[GOOD] Tier 2: Full context, no pruning
+[Revision] Reviewer: PASS
+[Task 2] Dispatch implementer
+[GOOD] Tier 2: Full context
+[Revision] Reviewer: PASS
+
+... (tasks 3–10)
+
+[Task 11] Dispatch implementer
+[DEGRADING] Tier 3: Context at 65%
+- Prune: remove verbose logs
+- Summarize: one-sentence summary of each task
+- Use context-budget-discipline.md to guide pruning
+
+[Task 12] Dispatch implementer
+[POOR] Tier 4: Context at 73%
+- Prune: keep only task list, file paths, minimal code
+- Summarize: full summary of completed tasks
+- **Abort:** Stop execution, checkpoint, report "context window exceeded"
+```
+
+## Why this matters
+
+Without context discipline, long workflows silently degrade. The agent stops understanding the plan, produces incomplete code, and fails without warning. This model makes degradation visible and actionable.
+
+## Further reading
+
+- **`references/gates-taxonomy.md`** — The four canonical gate types (Pre-flight, Revision, Escalation, Abort) with behavior, recovery, and examples. Load when designing or reviewing any workflow that has validation checkpoints — use the vocabulary explicitly so each gate has defined entry, failure behavior, and resumption rules.
+
+Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christopherson).
