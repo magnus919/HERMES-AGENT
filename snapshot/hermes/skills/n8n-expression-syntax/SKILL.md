@@ -256,6 +256,40 @@ Don't double-wrap expressions:
 
 ---
 
+## 🚨 CRITICAL: Webhook Data Structure
+
+**Most Common Mistake**: Webhook data is **NOT** at the root!
+
+### Webhook Node Output Structure
+
+```javascript
+{
+  "headers": {...},
+  "params": {...},
+  "query": {...},
+  "body": {           // ⚠️ USER DATA IS HERE!
+    "name": "John",
+    "email": "john@example.com",
+    "message": "Hello"
+  }
+}
+```
+
+### Correct Webhook Data Access
+
+```javascript
+❌ WRONG: {{$json.name}}
+❌ WRONG: {{$json.email}}
+
+✅ CORRECT: {{$json.body.name}}
+✅ CORRECT: {{$json.body.email}}
+✅ CORRECT: {{$json.body.message}}
+```
+
+**Why**: Webhook node wraps incoming data under `.body` property to preserve headers, params, and query parameters.
+
+---
+
 ## Common Mistakes
 
 For complete error catalog with fixes, see [COMMON_MISTAKES.md](COMMON_MISTAKES.md)

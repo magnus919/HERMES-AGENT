@@ -412,6 +412,8 @@ await n8n_update_partial_workflow({
 
 ---
 
+---
+
 ## Detailed Guides
 
 ### Node Discovery Tools
