@@ -37,7 +37,7 @@
     "kind": "dir",
     "required": true,
     "exists": true,
-    "size_bytes": 17610145
+    "size_bytes": 17611727
   },
   {
     "src": "/home/ubuntu/.hermes/pairing",
@@ -76,7 +76,7 @@
     "kind": "dir",
     "required": false,
     "exists": true,
-    "size_bytes": 1419993
+    "size_bytes": 1479960
   },
   {
     "src": "/home/ubuntu/.hermes/plugins",
@@ -123,7 +123,7 @@
     "kind": "file",
     "required": false,
     "exists": true,
-    "size_bytes": 131
+    "size_bytes": 125
   },
   {
     "src": "/home/ubuntu/.local/bin/repliz-api",

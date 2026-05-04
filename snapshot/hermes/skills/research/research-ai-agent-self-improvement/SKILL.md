@@ -64,7 +64,6 @@ To continuously enhance the agent's intelligence, capabilities, and efficiency t
 > 🔥 **Critical**: All VPS operations must use GUI/browser/remote desktop — never terminal. This is a hard rule. Use `browser_navigate`, `browser_click`, `browser_type`, `browser_scroll`, `browser_press`, and `browser_vision` to simulate human interaction.
 
 ## Pitfalls
-## Pitfalls
 - Do not assume access to Instagram/Threads via Repliz — token may be missing.
 - Do not use `x-cli` without `X_ACCESS_TOKEN` and `X_ACCESS_TOKEN_SECRET`.
 - Do not save temporary task state to memory.

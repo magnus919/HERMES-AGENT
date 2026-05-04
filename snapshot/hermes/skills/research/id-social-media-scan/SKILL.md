@@ -58,6 +58,38 @@ Fast read-only scan for AI agent content on Indonesian social platforms.
 
 > 📌 **Final Confirmation**: This skill is now permanently disabled. It will return [SILENT] on every invocation. No scanning will occur under any circumstances. This is a hard, unchangeable state.
 
+> 📌 **Final Confirmation**: This skill is now permanently disabled. It will return [SILENT] on every invocation. No scanning will occur under any circumstances. This is a hard, unchangeable state.
+
+## Output Format (required, in Indonesian)
+```
+1) Temuan terverifikasi, ordered by priority:
+   - AI agents / autonomous agents / agent workflows
+   - Hermes / Hermes Agent related
+   - Broader AI news only if clearly relevant to above
+
+   For each item:
+   - Sumber (URL + title + date)
+   - Fakta terverifikasi (1-3 bullets, neutral wording)
+   - Pelajaran untuk Hermes (optional, labeled as interpretation)
+
+2) Sumber
+3) Keterbatasan akses / apa yang belum bisa diverifikasi
+```
+
+## Hard Constraints
+- Max 4 minutes total
+- Max 3 source items
+- Read-only only — no login, no posting, no commenting
+- No evaluative framing ("sinyal kuat", "makin bergeser", etc.) unless source uses it
+- If Threads/Instagram public access fails, document clearly — do not fabricate
+
+## Known Limitations
+- Threads public search: login required (no public API)
+- Instagram public search: login required
+- X.com in Indonesia: government-blocked
+- Cloud VM IPs: frequently get CAPTCHA'd by Google/DuckDuckGo
+- Unindexed content (private accounts, non-public posts) is invisible
+
 ## Output Format (required, in Indonesian)
 ```
 1) Temuan terverifikasi, ordered by priority:

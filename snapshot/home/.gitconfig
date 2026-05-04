@@ -1,7 +1,7 @@
 [credential]
 	helper = 
 [user]
-	email = azmiariffaris@gmail.com
-	name = azmiariffaris
+	email = hermes@agent.local
+	name = Hermes Agent
 [safe]
 	directory = /var/www/assetloan.my.id
