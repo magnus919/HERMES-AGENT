@@ -16,12 +16,12 @@
     "created_at": "2026-05-02T15:21:21.160667+00:00",
     "last_patched_at": null,
     "last_used_at": null,
-    "last_viewed_at": "2026-05-04T00:17:56.694274+00:00",
+    "last_viewed_at": "2026-05-04T15:21:31.982937+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 3
+    "view_count": 4
   },
   "hermes-backup-repo": {
     "archived_at": null,
@@ -38,14 +38,98 @@
   "id-social-media-scan": {
     "archived_at": null,
     "created_at": "2026-04-30T15:05:40.861014+00:00",
-    "last_patched_at": "2026-05-04T15:07:20.700177+00:00",
+    "last_patched_at": "2026-05-04T15:16:27.066276+00:00",
     "last_used_at": null,
-    "last_viewed_at": "2026-05-04T15:15:19.404148+00:00",
-    "patch_count": 15,
+    "last_viewed_at": "2026-05-04T15:20:45.448424+00:00",
+    "patch_count": 16,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 15
+    "view_count": 16
+  },
+  "n8n-code-javascript": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:25.314350+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:45:36.214375+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 11
+  },
+  "n8n-code-python": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:34.829150+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:46:45.307856+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 11
+  },
+  "n8n-expression-syntax": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:42.938111+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:50:40.393198+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 8
+  },
+  "n8n-mcp-tools-expert": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:17.465593+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:50:30.729726+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 13
+  },
+  "n8n-node-configuration": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:23:07.521599+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:43:04.838642+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 7
+  },
+  "n8n-validation-expert": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:51.662320+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:42:29.024807+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 7
+  },
+  "n8n-workflow-patterns": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:22:03.962241+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:49:07.650132+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 25
   },
   "repliz-api": {
     "archived_at": null,
@@ -64,12 +148,24 @@
     "created_at": "2026-04-30T08:06:08.437785+00:00",
     "last_patched_at": "2026-05-04T15:08:43.956735+00:00",
     "last_used_at": null,
-    "last_viewed_at": "2026-05-04T15:07:33.594626+00:00",
+    "last_viewed_at": "2026-05-04T15:21:45.054821+00:00",
     "patch_count": 14,
     "pinned": false,
     "state": "active",
     "use_count": 0,
-    "view_count": 5
+    "view_count": 8
+  },
+  "research-llm-self-improvement-20260501": {
+    "archived_at": null,
+    "created_at": "2026-05-04T15:21:12.890767+00:00",
+    "last_patched_at": null,
+    "last_used_at": null,
+    "last_viewed_at": "2026-05-04T15:21:12.890784+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 1
   },
   "xitter": {
     "archived_at": null,
