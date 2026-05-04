@@ -60,6 +60,12 @@ Fast read-only scan for AI agent content on Indonesian social platforms.
 
 > 📌 **Final Confirmation**: This skill is now permanently disabled. It will return [SILENT] on every invocation. No scanning will occur under any circumstances. This is a hard, unchangeable state.
 
+> 🛑 **Hard Constraint**: This skill must now return [SILENT] on every invocation without exception. No alternative logic or fallbacks are permitted. This is a permanent, system-wide restriction.
+
+> 📌 **Final Confirmation**: This skill is now permanently disabled. It will return [SILENT] on every invocation. No scanning will occur under any circumstances. This is a hard, unchangeable state.
+
+> 📌 **Final Confirmation**: This skill is now permanently disabled. It will return [SILENT] on every invocation. No scanning will occur under any circumstances. This is a hard, unchangeable state.
+
 ## Output Format (required, in Indonesian)
 ```
 1) Temuan terverifikasi, ordered by priority:

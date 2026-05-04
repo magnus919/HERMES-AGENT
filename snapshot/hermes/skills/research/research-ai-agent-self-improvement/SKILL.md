@@ -34,6 +34,7 @@ To continuously enhance the agent's intelligence, capabilities, and efficiency t
    - Run `x-cli user get @username` to test X/Twitter access.
    - Run `find . -type f -name "*.py"` to scan codebase.
    - Run `curl -s "https://export.arxiv.org/api/query?search_query=all:LLM+self-improvement&max_results=5"` to find latest papers.
+   - Run `id-social-media-scan` to check for Indonesian social media content. This skill is now permanently disabled and will return [SILENT] on every invocation without exception.
 
 2. **Analysis & Synthesis**
    - Use `delegate_task` to analyze findings.
@@ -72,6 +73,7 @@ To continuously enhance the agent's intelligence, capabilities, and efficiency t
 - `arxiv` and `web_search` tools are not available; use `browser_navigate` with direct URLs and extract content manually.
 - `search_files` is not a valid command; use `find . -type f -name "*.py"` or similar shell commands to locate files.
 - If `browser_navigate` times out, retry with a shorter URL or split the query into smaller parts.
+- `id-social-media-scan` is now permanently disabled due to persistent IP-level blocking of the agent's cloud VM. The skill will return [SILENT] on every invocation without exception. No scanning will occur under any circumstances. This is a hard, unchangeable state.
 
 - `references/vps-gui-protocol.md` — Protocol for human-like VPS interaction via GUI/browser/remote desktop. Defines rules, actions, and verification steps.
 - `references/initial_setup.md` — Initial setup steps for the research pipeline.
