@@ -210,12 +210,12 @@ workspace: auto
 - **Improved leader spawn identity** and hardened regressions
 - **Support for stdin content** in inbox send
 
-## New in v0.3.0 (since v0.2.0)
-- **Headless runtime delivery** for subprocess agents — no GUI needed
-- **Keepalive recovery** and docker nanobot runtime support
-- **Generalized runtime injection** for interactive backends
-- **Improved leader spawn identity** and hardened regressions
-- **Support for stdin content** in inbox send
+## Catatan Penting
+
+- ClawTeam UI (board serve) jalan di port 8080
+- Data disimpan di `/home/ubuntu/.clawteam/`
+- Transport default: file-based (cocok untuk single machine)
+- Untuk multi-machine, gunakan `oh config set transport p2p` (butuh pyzmq)
 
 ## Maintenance — Updating ClawTeam
 
@@ -260,19 +260,3 @@ pip index:       Only checks PyPI → shows outdated info
 ```
 
 **Lesson learned:** For rapidly-evolving GitHub-first projects, `pip install --upgrade` checks PyPI only. Always verify against GitHub tags when update freshness matters.
-
-## Pitfalls
-
-- **`pip install --upgrade clawteam` is unreliable** — it only checks PyPI, which is often outdated. Always verify GitHub tags first.
-- **`clawteam` command not found** — ensure `PATH` includes `/home/ubuntu/clawteam-venv/bin` and the venv is activated.
-- **`oh` command not found** — `oh` is a symlink to `clawteam`. If missing, run `ln -s /home/ubuntu/clawteam-venv/bin/clawteam /usr/local/bin/oh`.
-- **`transport: p2p` fails** — requires `pyzmq` and proper network setup. For single-machine use, keep `transport: file`.
-- **`workspace: auto` fails** — if git worktree fails, check `git config --global core.autocrlf` and `git config --global core.safecrlf`.
-
-## Pro Tips
-
-- Use `oh board serve --port 8080` for web-based monitoring.
-- Use `oh task wait <team> --timeout 300` to wait for completion.
-- Use `oh spawn subprocess` for headless environments.
-- Use `oh config set transport p2p` only if you have multi-machine setup and `pyzmq` installed.
-- Use `oh team snapshot <team>` to save state before major changes.
