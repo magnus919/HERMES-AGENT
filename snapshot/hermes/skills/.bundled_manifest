@@ -40,6 +40,8 @@ humanizer:0a006757e41d605ba0818ecca10288ed
 ideation:0d1719daa364f2c5badd40c94620360f
 imessage:f545da0f5cc64dd9ee1ffd2b7733a11b
 jupyter-live-kernel:54612d9f0ff1b5eb6564f2dfeb5102b7
+kanban-orchestrator:1636b60c79180ee89108727bff9383c7
+kanban-worker:bc9124639762b2a5c20cd85580ae92e4
 linear:ab7a5dbd4001e31e2bd888d86ab699f8
 llama-cpp:fcfa4c23d52ac84abccf0b38e9844e07
 llm-wiki:90ca1bb67358ac2623775a0aefb949ff
