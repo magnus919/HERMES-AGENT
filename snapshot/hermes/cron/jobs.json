@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 977
+        "completed": 978
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-05-06T23:27:28.391593+08:00",
-      "last_run_at": "2026-05-06T22:27:28.311326+08:00",
+      "next_run_at": "2026-05-07T03:56:01.245181+08:00",
+      "last_run_at": "2026-05-06T22:57:41.539420+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -54,17 +54,17 @@
       "schedule_display": "5 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 25
+        "completed": 26
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:40:11.476700+08:00",
-      "next_run_at": "2026-05-06T23:05:00+08:00",
-      "last_run_at": "2026-05-05T23:05:39.172781+08:00",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-05-07T23:05:00+08:00",
+      "last_run_at": "2026-05-07T02:55:01.146435+08:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: Request payload too large (413). Cannot compress further.",
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -91,17 +91,17 @@
       "schedule_display": "20 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 24
+        "completed": 25
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:09.532058+07:00",
-      "next_run_at": "2026-05-06T23:20:00+08:00",
-      "last_run_at": "2026-05-05T23:33:57.365504+08:00",
+      "next_run_at": "2026-05-07T23:20:00+08:00",
+      "last_run_at": "2026-05-07T00:12:05.642120+08:00",
       "last_status": "error",
-      "last_error": "RuntimeError: [SILENT]",
+      "last_error": "RuntimeError: [ERROR] Maximum tool-calling iterations reached. Unable to complete task.",
       "deliver": "local",
       "origin": {
         "platform": "telegram",
@@ -215,18 +215,18 @@
       "schedule_display": "0 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 6
+        "completed": 7
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-01T08:07:21.423144+08:00",
-      "next_run_at": "2026-05-06T23:00:00+08:00",
-      "last_run_at": "2026-05-05T23:02:39.810856+08:00",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "next_run_at": "2026-05-07T23:00:00+08:00",
+      "last_run_at": "2026-05-06T23:56:05.197957+08:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: Response truncated due to output length limit",
+      "last_delivery_error": "delivery error: Telegram send failed: Forbidden: bot can't initiate conversation with a user",
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -260,15 +260,15 @@
       "schedule_display": "0 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 5
+        "completed": 6
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-01T23:06:16.110097+08:00",
-      "next_run_at": "2026-05-06T23:00:00+08:00",
-      "last_run_at": "2026-05-05T23:02:41.812662+08:00",
+      "next_run_at": "2026-05-07T23:00:00+08:00",
+      "last_run_at": "2026-05-06T23:56:07.362361+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -310,15 +310,15 @@
       "schedule_display": "0 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 5
+        "completed": 6
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-05-01T23:20:27.643729+08:00",
-      "next_run_at": "2026-05-06T23:00:00+08:00",
-      "last_run_at": "2026-05-05T23:03:24.223505+08:00",
+      "next_run_at": "2026-05-07T23:00:00+08:00",
+      "last_run_at": "2026-05-06T23:56:07.971523+08:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -337,5 +337,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-05-06T22:57:28.392305+08:00"
+  "updated_at": "2026-05-07T03:26:01.245377+08:00"
 }
