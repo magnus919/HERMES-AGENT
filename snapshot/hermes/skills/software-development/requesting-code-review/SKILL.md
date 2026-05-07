@@ -277,3 +277,12 @@ tests exist, tests pass, no regressions.
 - **No test framework found** — skip regression check, reviewer verdict still runs
 - **Lint tools not installed** — skip that check silently, don't fail
 - **Auto-fix introduces new issues** — counts as a new failure, cycle continues
+
+## Integration with Cron Jobs
+
+For cron jobs that run daily (e.g., `0 8 * * *`), ensure the verification process includes:
+- **Pre-run data collection** via `script` field in cron config
+- **Separation of collection and synthesis** to avoid timeout
+- **Explicit error handling** for failed data sources
+
+This ensures the workflow is robust and audit-ready.

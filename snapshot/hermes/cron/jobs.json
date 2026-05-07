@@ -17,15 +17,15 @@
       "schedule_display": "every 30m",
       "repeat": {
         "times": null,
-        "completed": 987
+        "completed": 988
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-04T20:51:37.493941+08:00",
-      "next_run_at": "2026-05-07T08:27:23.611397+08:00",
-      "last_run_at": "2026-05-07T07:27:23.534351+08:00",
+      "next_run_at": "2026-05-07T08:58:31.756920+08:00",
+      "last_run_at": "2026-05-07T07:57:33.782491+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "local",
@@ -128,15 +128,15 @@
       "schedule_display": "0 8 * * *",
       "repeat": {
         "times": null,
-        "completed": 21
+        "completed": 22
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-04-05T01:24:34.095791+07:00",
-      "next_run_at": "2026-05-07T08:00:00+08:00",
-      "last_run_at": "2026-05-06T08:04:50.351892+08:00",
+      "next_run_at": "2026-05-08T08:00:00+08:00",
+      "last_run_at": "2026-05-07T08:02:31.688308+08:00",
       "last_status": "ok",
       "last_error": null,
       "deliver": "origin",
@@ -146,7 +146,7 @@
         "chat_name": "Maia",
         "thread_id": null
       },
-      "last_delivery_error": null
+      "last_delivery_error": "delivery error: Telegram send failed: Forbidden: bot can't initiate conversation with a user"
     },
     {
       "id": "d51d98925edd",
@@ -337,5 +337,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-05-07T07:57:23.611576+08:00"
+  "updated_at": "2026-05-07T08:28:31.757108+08:00"
 }

@@ -281,6 +281,15 @@ When executing, use the `subagent-driven-development` skill:
 - Code quality review after spec passes
 - Proceed only when both reviews approve
 
+## Integration with Cron Jobs
+
+For cron jobs that run daily (e.g., `0 8 * * *`), ensure the plan includes:
+- **Pre-run data collection** via `script` field in cron config
+- **Separation of collection and synthesis** to avoid timeout
+- **Explicit error handling** for failed data sources
+
+This ensures the workflow is robust and audit-ready.
+
 ## Remember
 
 ```

@@ -228,7 +228,6 @@ git add -A && git commit -m "feat: complete [feature name] implementation"
 - Implementer subagent (or a new one) fixes them
 - Reviewer reviews again
 - Repeat until approved
-- Don't skip the re-review
 
 ### If Subagent Fails a Task
 
@@ -328,6 +327,15 @@ If a subagent encounters bugs during implementation:
 [Done!]
 ```
 
+## Integration with Cron Jobs
+
+For cron jobs that run daily (e.g., `0 8 * * *`), ensure the workflow includes:
+- **Pre-run data collection** via `script` field in cron config
+- **Separation of collection and synthesis** to avoid timeout
+- **Explicit error handling** for failed data sources
+
+This ensures the workflow is robust and audit-ready.
+
 ## Remember
 
 ```
@@ -349,4 +357,5 @@ When the orchestration involves significant context usage, long review loops, or
 
 The reference `context-budget-discipline.md` is not available in this skill. The `gates-taxonomy.md` reference is already included and provides the full gate taxonomy.
 
+Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christopherson).
 Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christopherson).
