@@ -333,8 +333,13 @@ For cron jobs that run daily (e.g., `0 8 * * *`), ensure the workflow includes:
 - **Pre-run data collection** via `script` field in cron config
 - **Separation of collection and synthesis** to avoid timeout
 - **Explicit error handling** for failed data sources
+- **Audit trail of data sources and artifacts** via `artifacts` field in cron config
 
-This ensures the workflow is robust and audit-ready.
+This ensures the workflow is robust, audit-ready, and traceable. The `artifacts` field should list all files generated during data collection (e.g., `data/2026-05-07-08-00-00.json`, `logs/scraper-2026-05-07.log`) so that the synthesis phase can reference them explicitly.
+
+This pattern was validated in the morning digest cron job (ID: 5e591a7be711), where a failed output due to truncation was traced back to missing separation between data collection and synthesis. The fix was to split the workflow into two stages: first collect data into a file, then synthesize the report from that file.
+
+This ensures the workflow is robust, audit-ready, and traceable.
 
 ## Remember
 
