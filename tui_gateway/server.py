@@ -1036,6 +1036,73 @@ def _err(rid, code: int, msg: str) -> dict:
     return {"jsonrpc": "2.0", "id": rid, "error": {"code": code, "message": msg}}
 
 
+def _exec_guarded_command(
+    cmd: str,
+    *,
+    timeout: int = 30,
+    cwd: str | None = None,
+) -> dict:
+    """Run *cmd* through the dangerous-command guard and execute it.
+
+    Returns a dict with keys ``ok``, ``code``, ``message`` (on error) or
+    ``ok``, ``stdout``, ``stderr``, ``code`` (on success).
+
+    Fail-closed: if the dangerous-command guard cannot be loaded, the
+    command is refused rather than silently bypassed.
+    """
+    if not cmd:
+        return {"ok": False, "code": 4004, "message": "empty command"}
+
+    try:
+        from tools.approval import detect_dangerous_command, detect_hardline_command
+
+        # Hardline floor first: unconditional block for catastrophic commands
+        # (shutdown, reboot, rm -rf /, fork bomb, etc.) — applied BEFORE
+        # the dangerous-command guard so no configuration can bypass it.
+        is_hardline, hardline_desc = detect_hardline_command(cmd)
+        if is_hardline:
+            return {
+                "ok": False,
+                "code": 4005,
+                "message": f"hardline blocked: {hardline_desc}",
+            }
+
+        is_dangerous, _, desc = detect_dangerous_command(cmd)
+        if is_dangerous:
+            return {
+                "ok": False,
+                "code": 4005,
+                "message": f"blocked: {desc}. Use the agent for dangerous commands.",
+            }
+    except ImportError:
+        return {
+            "ok": False,
+            "code": 4006,
+            "message": "dangerous-command guard unavailable; refusing to execute",
+        }
+    except Exception as e:
+        return {
+            "ok": False,
+            "code": 4007,
+            "message": f"guard evaluation failed: {e}",
+        }
+
+    try:
+        r = subprocess.run(
+            cmd,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            cwd=cwd or os.getcwd(),
+        )
+        return {"ok": True, "stdout": r.stdout, "stderr": r.stderr, "code": r.returncode}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "code": 5002, "message": f"command timed out ({timeout}s)"}
+    except Exception as e:
+        return {"ok": False, "code": 5003, "message": str(e)}
+
+
 def method(name: str):
     def dec(fn):
         _methods[name] = fn
@@ -11159,24 +11226,21 @@ def _(rid, params: dict) -> dict:
     if name in qcmds:
         qc = qcmds[name]
         if qc.get("type") == "exec":
-            r = subprocess.run(
-                qc.get("command", ""),
-                shell=True,
-                capture_output=True,
-                text=True,
-                timeout=30,
-                stdin=subprocess.DEVNULL,
+            result = _exec_guarded_command(
+                qc.get("command", ""), timeout=30
             )
+            if not result["ok"]:
+                return _err(rid, result["code"], result["message"])
+            _stdout = result.get("stdout") or ""
+            _stderr = result.get("stderr") or ""
             output = (
-                (r.stdout or "")
-                + ("\n" if r.stdout and r.stderr else "")
-                + (r.stderr or "")
+                _stdout
+                + ("\n" if _stdout and _stderr else "")
+                + _stderr
             ).strip()[:4000]
-            if r.returncode != 0:
+            if result["code"] != 0:
                 return _err(
-                    rid,
-                    4018,
-                    output or f"quick command failed with exit code {r.returncode}",
+                    rid, 4018, output or f"quick command failed with exit code {result['code']}"
                 )
             return _ok(rid, {"type": "exec", "output": output})
         if qc.get("type") == "alias":
