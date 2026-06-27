@@ -8477,12 +8477,13 @@ def test_exec_guarded_command_dangerous_blocked():
 
 def test_exec_guarded_command_import_error(monkeypatch):
     """Guard unavailable (ImportError) should fail closed with 4006."""
-    orig_import = __builtins__.__import__
+    import builtins
+    orig_import = builtins.__import__
     def _mock_import(name, *args, **kw):
         if name == "tools.approval":
             raise ImportError("mock guard unavailable")
         return orig_import(name, *args, **kw)
-    monkeypatch.setattr(__builtins__, "__import__", _mock_import)
+    monkeypatch.setattr(builtins, "__import__", _mock_import)
     result = server._exec_guarded_command("echo hi")
     assert result["ok"] is False
     assert result["code"] == 4006
@@ -8491,10 +8492,13 @@ def test_exec_guarded_command_import_error(monkeypatch):
 
 def test_exec_guarded_command_guard_exception(monkeypatch):
     """Guard evaluation failure should fail closed with 4007."""
+    import tools.approval
     def _broken_detect(*args, **kw):
         raise RuntimeError("synthetic detector failure")
-    monkeypatch.setattr("tui_gateway.server.detect_dangerous_command", _broken_detect)
-    monkeypatch.setattr("tui_gateway.server.detect_hardline_command", lambda cmd: (False, ""))
+    def _safe_hardline(cmd):
+        return (False, "")
+    monkeypatch.setattr(tools.approval, "detect_dangerous_command", _broken_detect)
+    monkeypatch.setattr(tools.approval, "detect_hardline_command", _safe_hardline)
     result = server._exec_guarded_command("echo hi")
     assert result["ok"] is False
     assert result["code"] == 4007
