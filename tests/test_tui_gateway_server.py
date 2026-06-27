@@ -8447,3 +8447,89 @@ class TestResolveRuntimeWithFallback:
 
         assert agent.model == "gpt-5.5"
         assert captured["provider"] == "deepseek"
+
+# ── _exec_guarded_command tests ──────────────────────────────────────
+
+
+def test_exec_guarded_command_empty():
+    """Empty command should be rejected with code 4004."""
+    result = server._exec_guarded_command("")
+    assert result["ok"] is False
+    assert result["code"] == 4004
+    assert "empty" in result["message"].lower()
+
+
+def test_exec_guarded_command_hardline_blocked():
+    """Hardline commands (shutdown, reboot, etc.) should be rejected."""
+    result = server._exec_guarded_command("reboot")
+    assert result["ok"] is False
+    assert result["code"] == 4005
+    assert "hardline" in result["message"].lower()
+
+
+def test_exec_guarded_command_dangerous_blocked():
+    """Dangerous commands (rm -rf, etc.) should be rejected."""
+    result = server._exec_guarded_command("rm -rf /tmp/demo")
+    assert result["ok"] is False
+    assert result["code"] == 4005
+    assert "blocked" in result["message"].lower()
+
+
+def test_exec_guarded_command_import_error(monkeypatch):
+    """Guard unavailable (ImportError) should fail closed with 4006."""
+    orig_import = __builtins__.__import__
+    def _mock_import(name, *args, **kw):
+        if name == "tools.approval":
+            raise ImportError("mock guard unavailable")
+        return orig_import(name, *args, **kw)
+    monkeypatch.setattr(__builtins__, "__import__", _mock_import)
+    result = server._exec_guarded_command("echo hi")
+    assert result["ok"] is False
+    assert result["code"] == 4006
+    assert "unavailable" in result["message"].lower()
+
+
+def test_exec_guarded_command_guard_exception(monkeypatch):
+    """Guard evaluation failure should fail closed with 4007."""
+    def _broken_detect(*args, **kw):
+        raise RuntimeError("synthetic detector failure")
+    monkeypatch.setattr("tui_gateway.server.detect_dangerous_command", _broken_detect)
+    monkeypatch.setattr("tui_gateway.server.detect_hardline_command", lambda cmd: (False, ""))
+    result = server._exec_guarded_command("echo hi")
+    assert result["ok"] is False
+    assert result["code"] == 4007
+
+
+def test_exec_guarded_command_stdin_devnull(monkeypatch):
+    """subprocess.run should receive stdin=subprocess.DEVNULL."""
+    captured = {}
+    def _capture_run(*args, **kw):
+        captured["stdin"] = kw.get("stdin")
+        return subprocess.CompletedProcess(args[0], 0, stdout="ok", stderr="")
+    monkeypatch.setattr(subprocess, "run", _capture_run)
+    server._exec_guarded_command("echo ok")
+    assert captured.get("stdin") is subprocess.DEVNULL
+
+
+def test_exec_guarded_command_safe_succeeds():
+    """Safe command should succeed and return stdout, stderr, exit code."""
+    result = server._exec_guarded_command("echo hello")
+    assert result["ok"] is True
+    assert "hello" in (result.get("stdout") or "")
+    assert result["code"] == 0
+
+
+def test_exec_guarded_command_stdout_stderr_preserved():
+    """Both stdout and stderr should be returned on success."""
+    result = server._exec_guarded_command("echo out && echo err >&2")
+    assert result["ok"] is True
+    assert "out" in (result.get("stdout") or "")
+    assert "err" in (result.get("stderr") or "")
+
+
+def test_exec_guarded_command_timeout():
+    """Timeout should be reported with code 5002."""
+    result = server._exec_guarded_command("sleep 10", timeout=1)
+    assert result["ok"] is False
+    assert result["code"] == 5002
+    assert "timed out" in result["message"].lower()

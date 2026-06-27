@@ -1095,6 +1095,7 @@ def _exec_guarded_command(
             text=True,
             timeout=timeout,
             cwd=cwd or os.getcwd(),
+            stdin=subprocess.DEVNULL,
         )
         return {"ok": True, "stdout": r.stdout, "stderr": r.stderr, "code": r.returncode}
     except subprocess.TimeoutExpired:
